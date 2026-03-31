@@ -1,0 +1,728 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#0D0C09;--white:#F2EEE3;--muted:rgba(242,238,227,0.38);
+  --dim:rgba(242,238,227,0.16);--border:rgba(242,238,227,0.08);
+  --lime:#C8F135;--coral:#FF5C3A;--sky:#89CFFF;--purple:#A87CFF;
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --syne:'Syne',system-ui,sans-serif;
+}
+body{font-family:var(--sans);background:var(--bg);color:var(--white);overflow-x:hidden;line-height:1;}
+
+/* ── NAV ── */
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 32px;height:52px;
+  background:rgba(13,12,9,0.9);
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:200;
+  backdrop-filter:blur(10px);
+}
+.nav-logo{font-family:var(--syne);font-size:17px;font-weight:800;color:var(--lime);letter-spacing:-0.02em;cursor:pointer;}
+.nav-links{display:flex;gap:2px;align-items:center;}
+.nl{font-size:12.5px;color:var(--muted);padding:5px 12px;border-radius:40px;cursor:pointer;transition:all 0.15s;}
+.nl:hover{color:var(--white);background:rgba(242,238,227,0.06);}
+.nl.on{color:var(--white);}
+.nl.pikl-nl{color:var(--lime);}
+.nl.pikl-nl.on{color:var(--lime);}
+.nav-cta{background:var(--lime);color:var(--bg);padding:7px 16px;border-radius:40px;font-family:var(--syne);font-size:12px;font-weight:700;cursor:pointer;margin-left:6px;transition:transform 0.15s;}
+.nav-cta:hover{transform:scale(1.04);}
+
+/* ── PAGE ── */
+.pg{display:none;}
+.pg.on{display:block;animation:up 0.28s ease both;}
+@keyframes up{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── BUTTONS ── */
+.btn-lime{background:var(--lime);color:var(--bg);padding:13px 26px;border-radius:50px;font-family:var(--syne);font-size:14px;font-weight:700;cursor:pointer;transition:transform 0.15s;display:inline-flex;align-items:center;gap:8px;}
+.btn-lime:hover{transform:translateY(-2px);}
+.btn-out{padding:12px 22px;border:1px solid var(--border);border-radius:50px;font-size:14px;color:var(--muted);cursor:pointer;transition:all 0.15s;}
+.btn-out:hover{border-color:rgba(242,238,227,0.3);color:var(--white);}
+
+/* ════════════════════════
+   HOME
+════════════════════════ */
+.home-hero{
+  min-height:88vh;display:flex;flex-direction:column;
+  justify-content:flex-end;padding:0 32px 52px;
+  position:relative;overflow:hidden;
+}
+.hero-glow{
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 55% 50% at 75% 25%,rgba(200,241,53,0.055) 0%,transparent 68%);
+}
+/* Ghost SVG — confirmed working method */
+.hero-ghost-svg{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none;}
+
+.hero-content{position:relative;z-index:2;max-width:800px;}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:30px;}
+.hero-dash{width:22px;height:1px;background:var(--dim);}
+.hero-eyebrow-text{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);}
+.hero-h1{font-family:var(--serif);font-size:82px;font-weight:400;line-height:1.0;letter-spacing:-0.025em;color:var(--white);margin-bottom:0;}
+.hero-h1 .italic{font-style:italic;color:var(--muted);}
+.hero-h1 .lime{color:var(--lime);}
+.hero-sub{font-size:16px;color:var(--muted);line-height:1.72;max-width:440px;margin:26px 0 38px;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+
+/* TICKER — JS driven */
+.ticker-outer{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;background:var(--bg);}
+.ticker-inner{display:inline-flex;white-space:nowrap;will-change:transform;}
+.ti{display:inline-block;padding:0 26px;font-family:var(--syne);font-size:12.5px;font-weight:700;letter-spacing:0.05em;color:var(--dim);}
+.ti em{color:var(--lime);font-style:normal;}
+
+/* MANIFESTO */
+.manifesto{padding:76px 32px;}
+.sec-label{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--dim);margin-bottom:44px;}
+.m-list{display:flex;flex-direction:column;}
+.m-item{display:grid;grid-template-columns:60px 1fr;gap:20px;padding:34px 0;border-top:1px solid var(--border);}
+.m-n{font-family:var(--syne);font-size:11px;font-weight:700;color:var(--dim);padding-top:5px;}
+.m-h{font-family:var(--serif);font-size:28px;color:var(--white);margin-bottom:10px;line-height:1.2;font-weight:400;}
+.m-p{font-size:14px;color:var(--muted);line-height:1.78;max-width:520px;}
+.m-link{margin-top:12px;font-size:13px;color:var(--lime);cursor:pointer;display:inline-flex;align-items:center;gap:5px;}
+
+/* PROOF */
+.proof{padding:76px 32px;border-top:1px solid var(--border);}
+.proof-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:44px;}
+.proof-see{font-size:13px;color:var(--muted);cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+.pc{background:var(--bg);padding:32px 26px;position:relative;}
+.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.pc.a::before{background:var(--coral);}
+.pc.b::before{background:var(--purple);}
+.pc.c::before{background:var(--sky);}
+.pc-domain{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--dim);margin-bottom:18px;}
+.pc-n{font-family:var(--syne);font-size:58px;font-weight:800;letter-spacing:-0.04em;line-height:1;color:var(--white);margin-bottom:4px;}
+.pc-nl{font-size:11px;color:var(--dim);margin-bottom:14px;}
+.pc-d{font-size:13px;color:var(--muted);line-height:1.62;}
+.pc-ins{margin-top:16px;padding-top:14px;border-top:1px solid var(--border);font-family:var(--serif);font-style:italic;font-size:13px;color:rgba(242,238,227,0.45);line-height:1.5;}
+
+/* PIKL BRIDGE */
+.bridge{padding:88px 32px;border-top:1px solid var(--border);position:relative;overflow:hidden;}
+.bridge-glow{position:absolute;inset:0;background:radial-gradient(ellipse 45% 60% at 80% 50%,rgba(200,241,53,0.065) 0%,transparent 70%);pointer-events:none;}
+.bridge-inner{position:relative;z-index:2;}
+.bridge-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(200,241,53,0.07);border:1px solid rgba(200,241,53,0.14);border-radius:40px;padding:5px 13px;font-size:11px;color:var(--lime);letter-spacing:0.06em;margin-bottom:26px;}
+.bridge-dot{width:5px;height:5px;border-radius:50%;background:var(--lime);animation:blink 2s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.25;}}
+.bridge-h{font-family:var(--syne);font-size:78px;font-weight:800;line-height:0.96;letter-spacing:-0.03em;color:var(--white);margin-bottom:18px;}
+.bridge-h .lime{color:var(--lime);}
+.bridge-sub{font-size:16px;color:var(--muted);max-width:420px;line-height:1.66;margin-bottom:26px;}
+.bridge-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;}
+.chip{background:rgba(242,238,227,0.04);border:1px solid var(--border);border-radius:40px;padding:6px 14px;font-size:12.5px;color:var(--muted);}
+
+/* BUILD LOG PREVIEW */
+.bl-home{padding:76px 32px;border-top:1px solid var(--border);}
+.bl-layout{display:grid;grid-template-columns:200px 1fr;gap:56px;}
+.bl-lh{font-family:var(--serif);font-size:24px;font-weight:400;color:var(--white);line-height:1.3;margin-top:8px;}
+.bl-e{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--border);}
+.bl-e:first-child{border-top:1px solid var(--border);}
+.bl-date{font-size:11px;color:var(--dim);min-width:70px;font-family:monospace;padding-top:2px;}
+.bl-et{font-size:14px;font-weight:500;color:var(--white);margin-bottom:5px;}
+.bl-ep{font-size:13px;color:var(--muted);line-height:1.65;}
+.bl-cta{margin-top:18px;font-size:13px;color:var(--lime);cursor:pointer;display:inline-flex;align-items:center;gap:5px;}
+
+/* FOOTER */
+.footer{padding:26px 32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.f-logo{font-family:var(--syne);font-size:15px;font-weight:800;color:var(--lime);}
+.f-links{display:flex;gap:22px;}
+.f-link{font-size:12px;color:var(--dim);}
+.f-note{font-size:11px;color:var(--dim);}
+
+/* ════════════════════════
+   WHY I BUILD
+════════════════════════ */
+.why-top{padding:80px 32px 56px;position:relative;overflow:hidden;}
+.why-ghost-svg{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none;}
+.why-content{position:relative;z-index:2;max-width:680px;}
+.pg-num{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--dim);margin-bottom:22px;}
+.why-h1{font-family:var(--serif);font-size:68px;font-weight:400;line-height:1.02;letter-spacing:-0.025em;color:var(--white);margin-bottom:20px;}
+.why-h1 em{font-style:italic;color:var(--muted);}
+.why-intro{font-size:16px;color:var(--muted);line-height:1.75;max-width:480px;}
+.chapters{padding:0 32px 76px;display:flex;flex-direction:column;}
+.chapter{padding:48px 0;border-top:1px solid var(--border);display:grid;grid-template-columns:164px 1fr;gap:44px;}
+.ch-mark{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);padding-top:4px;}
+.ch-h{font-family:var(--serif);font-size:24px;color:var(--white);margin-bottom:14px;line-height:1.25;font-weight:400;}
+.ch-p{font-size:14px;color:var(--muted);line-height:1.8;max-width:500px;}
+.ch-pull{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--white);padding-left:18px;border-left:2px solid var(--lime);margin-top:20px;max-width:440px;line-height:1.45;}
+.ch-cta{margin-top:18px;font-size:13px;color:var(--lime);cursor:pointer;display:inline-flex;align-items:center;gap:5px;}
+
+/* ════════════════════════
+   WORK
+════════════════════════ */
+.work-top{padding:80px 32px 48px;}
+.work-h1{font-family:var(--serif);font-size:68px;font-weight:400;line-height:1.02;letter-spacing:-0.025em;color:var(--white);max-width:620px;margin-bottom:16px;}
+.work-sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:440px;}
+.cases{padding:0 32px 76px;display:flex;flex-direction:column;}
+.case{padding:52px 0;border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;}
+.case-tag{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.case-n{font-family:var(--syne);font-size:70px;font-weight:800;letter-spacing:-0.04em;line-height:1;color:var(--white);margin-bottom:4px;}
+.case-ns{font-size:11px;color:var(--dim);margin-bottom:14px;}
+.case-h{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--white);line-height:1.3;}
+.case-sit{font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--dim);margin-bottom:8px;}
+.case-p{font-size:14px;color:var(--muted);line-height:1.78;margin-bottom:16px;}
+.case-il{font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--dim);margin-bottom:6px;}
+.case-i{font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(242,238,227,0.5);line-height:1.5;}
+
+/* ════════════════════════
+   PIKL
+════════════════════════ */
+.pikl-hero{
+  min-height:88vh;display:flex;flex-direction:column;
+  justify-content:flex-end;padding:0 32px 56px;
+  position:relative;overflow:hidden;
+}
+.pikl-hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 55% 55% at 68% 28%,rgba(200,241,53,0.08) 0%,transparent 65%);pointer-events:none;}
+.pikl-ghost-svg{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none;}
+.pikl-content{position:relative;z-index:2;}
+.pikl-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(137,207,255,0.07);border:1px solid rgba(137,207,255,0.14);border-radius:40px;padding:5px 13px;font-size:11px;color:var(--sky);letter-spacing:0.06em;margin-bottom:30px;}
+.pikl-pill-dot{width:5px;height:5px;border-radius:50%;background:var(--sky);animation:blink 2.5s ease-in-out infinite;}
+.pikl-h1{font-family:var(--syne);font-size:96px;font-weight:800;line-height:0.94;letter-spacing:-0.04em;color:var(--white);margin-bottom:0;}
+.pikl-h1 .lime{color:var(--lime);}
+.pikl-sub{font-size:17px;color:var(--muted);max-width:420px;line-height:1.65;margin:24px 0 30px;}
+.trust-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:34px;}
+.tc{background:rgba(242,238,227,0.04);border:1px solid var(--border);border-radius:40px;padding:6px 12px;font-size:12px;color:var(--muted);display:flex;align-items:center;gap:7px;}
+.tc-ck{width:14px;height:14px;border-radius:50%;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;color:var(--bg);flex-shrink:0;}
+.pikl-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+
+/* Pikl marquee — also JS driven */
+.pikl-mq{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;overflow:hidden;}
+.pikl-mq-inner{display:inline-flex;white-space:nowrap;will-change:transform;}
+.pmi{display:inline-block;padding:0 28px;font-family:var(--syne);font-size:12px;font-weight:700;letter-spacing:0.05em;color:var(--dim);}
+.pmi em{color:var(--lime);font-style:normal;}
+
+/* problem — light break */
+.pikl-prob{background:var(--white);padding:76px 32px;color:var(--bg);}
+.pikl-prob-label{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:rgba(13,12,9,0.35);margin-bottom:16px;}
+.pikl-prob-h{font-family:var(--syne);font-size:48px;font-weight:800;line-height:1.06;letter-spacing:-0.025em;color:var(--bg);max-width:600px;margin-bottom:34px;}
+.pikl-prob-h .coral{color:var(--coral);}
+.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:44px;}
+.pain{background:#EEEADE;border-radius:14px;padding:22px;border-top:3px solid;}
+.pain.a{border-top-color:var(--coral);}
+.pain.b{border-top-color:#5BBCFF;}
+.pain.c{border-top-color:var(--purple);}
+.pain.d{border-top-color:#7AB520;}
+.pain-h{font-family:var(--syne);font-size:14px;font-weight:700;color:var(--bg);margin-bottom:6px;}
+.pain-p{font-size:13px;color:rgba(13,12,9,0.5);line-height:1.58;}
+.pikl-stat{display:flex;align-items:baseline;gap:14px;}
+.pikl-stat-n{font-family:var(--syne);font-size:104px;font-weight:800;letter-spacing:-0.04em;line-height:1;color:var(--bg);}
+.pikl-stat-sub{font-size:15px;color:rgba(13,12,9,0.45);max-width:220px;line-height:1.55;}
+
+/* use cases */
+.pikl-use{padding:76px 32px;border-top:1px solid var(--border);}
+.pikl-use-h{font-family:var(--syne);font-size:46px;font-weight:800;line-height:1.05;letter-spacing:-0.025em;color:var(--white);margin-bottom:34px;}
+.pikl-use-h .lime{color:var(--lime);}
+.use-list{display:flex;flex-direction:column;}
+.use-item{border-top:1px solid var(--border);padding:26px 0;display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:start;}
+.use-n{font-family:var(--syne);font-size:12px;font-weight:700;color:var(--lime);padding-top:4px;}
+.use-q{font-family:var(--syne);font-size:19px;font-weight:700;color:var(--white);margin-bottom:8px;line-height:1.2;}
+.use-a{font-size:13.5px;color:var(--muted);line-height:1.68;}
+
+/* trust */
+.pikl-trust{background:var(--lime);padding:76px 32px;color:var(--bg);}
+.pt-label{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:rgba(13,12,9,0.35);margin-bottom:16px;}
+.pt-h{font-family:var(--syne);font-size:64px;font-weight:800;line-height:0.97;letter-spacing:-0.03em;color:var(--bg);margin-bottom:36px;}
+.pt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.pt-card{background:rgba(13,12,9,0.08);border-radius:14px;padding:22px;}
+.pt-card-h{font-family:var(--syne);font-size:14px;font-weight:700;color:var(--bg);margin-bottom:7px;}
+.pt-card-p{font-size:13px;color:rgba(13,12,9,0.55);line-height:1.58;}
+
+/* vision */
+.pikl-vision{padding:76px 32px;border-top:1px solid var(--border);}
+.pv-label{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--dim);margin-bottom:16px;}
+.pv-h{font-family:var(--serif);font-size:38px;font-weight:400;line-height:1.15;letter-spacing:-0.015em;color:var(--white);max-width:580px;margin-bottom:18px;}
+.pv-p{font-size:15px;color:var(--muted);line-height:1.78;max-width:560px;margin-bottom:26px;}
+.pv-pull{font-family:var(--syne);font-size:22px;font-weight:700;color:var(--lime);line-height:1.25;letter-spacing:-0.01em;max-width:520px;}
+
+/* final CTA */
+.pikl-final{padding:88px 32px;border-top:1px solid var(--border);text-align:center;}
+.pf-h{font-family:var(--syne);font-size:72px;font-weight:800;letter-spacing:-0.035em;color:var(--white);line-height:0.97;margin-bottom:14px;}
+.pf-h .lime{color:var(--lime);}
+.pf-sub{font-size:15px;color:var(--muted);margin-bottom:34px;}
+.pf-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+/* ════════════════════════
+   BUILD LOG
+════════════════════════ */
+.log-top{padding:80px 32px 48px;position:relative;overflow:hidden;}
+.log-ghost-svg{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none;}
+.log-content{position:relative;z-index:2;max-width:560px;}
+.log-h1{font-family:var(--serif);font-size:60px;font-weight:400;line-height:1.06;letter-spacing:-0.025em;color:var(--white);margin-bottom:16px;}
+.log-sub{font-size:15px;color:var(--muted);line-height:1.72;max-width:380px;}
+.log-list{padding:0 32px 76px;}
+.log-e{display:grid;grid-template-columns:100px 1fr;gap:22px;padding:30px 0;border-bottom:1px solid var(--border);}
+.log-e:first-child{border-top:1px solid var(--border);}
+.log-d{font-size:11px;color:var(--dim);font-family:monospace;letter-spacing:0.02em;padding-top:2px;}
+.log-t{font-size:15px;font-weight:500;color:var(--white);margin-bottom:9px;}
+.log-p{font-size:14px;color:var(--muted);line-height:1.72;}
+
+/* ════════════════════════
+   CONTACT
+════════════════════════ */
+.contact-wrap{padding:96px 32px;max-width:560px;}
+.contact-h{font-family:var(--serif);font-size:56px;font-weight:400;line-height:1.08;letter-spacing:-0.02em;color:var(--white);margin-bottom:20px;}
+.contact-note{font-size:16px;color:var(--muted);line-height:1.78;max-width:420px;margin-bottom:48px;}
+.contact-rows{display:flex;flex-direction:column;gap:16px;margin-bottom:48px;}
+.cr{display:flex;align-items:baseline;gap:18px;}
+.cr-l{font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--dim);min-width:56px;}
+.cr-v{font-size:15px;color:var(--white);}
+.contact-close{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--muted);line-height:1.55;}
+</style>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo" onclick="go('home')">pikl</div>
+  <div class="nav-links">
+    <div class="nl" id="nl-home" onclick="go('home')">Start Here</div>
+    <div class="nl" id="nl-why" onclick="go('why')">Why I Build</div>
+    <div class="nl" id="nl-work" onclick="go('work')">Work</div>
+    <div class="nl" id="nl-log" onclick="go('log')">Build Log</div>
+    <div class="nl" id="nl-contact" onclick="go('contact')">Contact</div>
+    <div class="nl pikl-nl" id="nl-pikl" onclick="go('pikl')">Pikl →</div>
+  </div>
+  <div class="nav-cta">early access</div>
+</nav>
+
+<!-- ════ HOME ════ -->
+<div class="pg on" id="pg-home">
+  <section class="home-hero">
+    <div class="hero-glow"></div>
+    <svg class="hero-ghost-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <text x="98%" y="98%" text-anchor="end" dominant-baseline="auto"
+        font-family="Syne,system-ui,sans-serif" font-size="320" font-weight="800"
+        fill="rgba(200,241,53,0.045)" letter-spacing="-16">R</text>
+    </svg>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="hero-dash"></div>
+        <div class="hero-eyebrow-text">Rujuta Parulekar · Product · Carnegie Mellon · Bengaluru</div>
+      </div>
+      <h1 class="hero-h1">
+        I build products<br>
+        for <span class="italic">high-stakes,</span><br>
+        <span class="lime">uncertain</span> journeys.
+      </h1>
+      <p class="hero-sub">From rebuilding my own life to shipping AI-enabled products across education, analytics, compliance, and safety — I care about one thing: clarity when the next step matters.</p>
+      <div class="hero-ctas">
+        <div class="btn-lime" onclick="go('why')">Start here →</div>
+        <div class="btn-out" onclick="go('pikl')">See Pikl</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker-outer">
+    <div class="ticker-inner" id="ticker-home">
+      <span class="ti">AI analytics <em>·</em></span>
+      <span class="ti">EdTech products <em>·</em></span>
+      <span class="ti">compliance workflows <em>·</em></span>
+      <span class="ti">industrial safety <em>·</em></span>
+      <span class="ti">OPT navigation <em>·</em></span>
+      <span class="ti">F-1 decisions <em>·</em></span>
+      <span class="ti">founder <em>·</em></span>
+      <span class="ti">builder <em>·</em></span>
+      <span class="ti">carnegie mellon <em>·</em></span>
+      <span class="ti">bengaluru <em>·</em></span>
+    </div>
+  </div>
+
+  <div class="manifesto">
+    <div class="sec-label">This site moves in one direction</div>
+    <div class="m-list">
+      <div class="m-item">
+        <div class="m-n">01</div>
+        <div>
+          <h2 class="m-h">How I got here</h2>
+          <p class="m-p">The personal and professional journey that shaped what I build — and why I keep choosing the hard, messy, high-stakes problems.</p>
+          <div class="m-link" onclick="go('why')">Read the story →</div>
+        </div>
+      </div>
+      <div class="m-item">
+        <div class="m-n">02</div>
+        <div>
+          <h2 class="m-h">What I've built</h2>
+          <p class="m-p">Selected work across AI analytics, EdTech, compliance, and industrial safety. Real systems, real stakes, real results.</p>
+          <div class="m-link" onclick="go('work')">See the work →</div>
+        </div>
+      </div>
+      <div class="m-item">
+        <div class="m-n">03</div>
+        <div>
+          <h2 class="m-h">Why Pikl exists</h2>
+          <p class="m-p">The problem I lived through, the gap I couldn't stop thinking about, and the company I'm building to close it.</p>
+          <div class="m-link" onclick="go('pikl')">Explore Pikl →</div>
+        </div>
+      </div>
+      <div class="m-item">
+        <div class="m-n">04</div>
+        <div>
+          <h2 class="m-h">What's happening now</h2>
+          <p class="m-p">Building in public. Thinking out loud. Following the signal wherever it goes.</p>
+          <div class="m-link" onclick="go('log')">Follow the build →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proof">
+    <div class="proof-head">
+      <div class="sec-label" style="margin-bottom:0;">Execution, not theory</div>
+      <div class="proof-see" onclick="go('work')">Full case studies →</div>
+    </div>
+    <div class="proof-grid" style="margin-top:44px;">
+      <div class="pc a">
+        <div class="pc-domain">AI Analytics · 3,000+ users</div>
+        <div class="pc-n">35%</div>
+        <div class="pc-nl">task completion improvement</div>
+        <div class="pc-d">AI-powered analytics platform. Adoption up 28% across three major releases.</div>
+        <div class="pc-ins">"The failure isn't the model — it's the moment between insight and action."</div>
+      </div>
+      <div class="pc b">
+        <div class="pc-domain">EdTech · Indian K-12</div>
+        <div class="pc-n">+14%</div>
+        <div class="pc-nl">premium conversion</div>
+        <div class="pc-d">ESL learning platform. Early-session retention improved by 12%.</div>
+        <div class="pc-ins">"First sessions are irreversible. That shapes every onboarding — including Pikl's."</div>
+      </div>
+      <div class="pc c">
+        <div class="pc-domain">Compliance & Safety</div>
+        <div class="pc-n">67%</div>
+        <div class="pc-nl">faster filing timelines</div>
+        <div class="pc-d">Medical device & safety workflows. Reporting errors down 30%.</div>
+        <div class="pc-ins">"Removing friction isn't UX. In high-stakes systems, it's safety."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bridge">
+    <div class="bridge-glow"></div>
+    <div class="bridge-inner">
+      <div class="bridge-pill"><span class="bridge-dot"></span>building now · early access open</div>
+      <h2 class="bridge-h">What I'm building:<br><span class="lime">Pikl.</span></h2>
+      <p class="bridge-sub">A private decision layer for international students. Before you accept the offer. Before you miss the deadline. Before you email your DSO blind.</p>
+      <div class="bridge-chips">
+        <div class="chip">Can I take this internship?</div>
+        <div class="chip">What about my OPT window?</div>
+        <div class="chip">How do I talk to my DSO?</div>
+      </div>
+      <div class="btn-lime" onclick="go('pikl')">Explore Pikl →</div>
+    </div>
+  </div>
+
+  <div class="bl-home">
+    <div class="bl-layout">
+      <div>
+        <div class="sec-label">Building in public</div>
+        <h3 class="bl-lh">Pikl, one step at a time</h3>
+      </div>
+      <div>
+        <div class="bl-e">
+          <div class="bl-date">Apr 2026</div>
+          <div><div class="bl-et">Why I stopped calling it a platform</div><div class="bl-ep">A platform implies infrastructure. What I'm building is a moment — the one before a student makes a decision they can't take back.</div></div>
+        </div>
+        <div class="bl-e">
+          <div class="bl-date">Mar 2026</div>
+          <div><div class="bl-et">Locking the three core flows</div><div class="bl-ep">Job offer review. OPT timeline. DSO prep. Three moments where students are most alone and most likely to get it wrong.</div></div>
+        </div>
+        <div class="bl-cta" onclick="go('log')">Follow the build →</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="f-logo">pikl</div>
+    <div class="f-links"><span class="f-link">rbp1307@gmail.com</span><span class="f-link">LinkedIn</span></div>
+    <div class="f-note">Building in public · Bengaluru · 2026</div>
+  </footer>
+</div>
+
+<!-- ════ WHY I BUILD ════ -->
+<div class="pg" id="pg-why">
+  <div class="why-top">
+    <svg class="why-ghost-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <text x="102%" y="95%" text-anchor="end" dominant-baseline="auto"
+        font-family="Syne,system-ui,sans-serif" font-size="260" font-weight="800"
+        fill="rgba(200,241,53,0.035)" letter-spacing="-13">WHY</text>
+    </svg>
+    <div class="why-content">
+      <div class="pg-num">02 — Why I Build</div>
+      <h1 class="why-h1">I'm drawn to products that sit inside <em>messy, high-stakes</em> systems.</h1>
+      <p class="why-intro">That instinct didn't come from a framework. It came from living in exactly those systems for most of my adult life.</p>
+    </div>
+  </div>
+  <div class="chapters">
+    <div class="chapter">
+      <div class="ch-mark">The script I was handed</div>
+      <div>
+        <h2 class="ch-h">I grew up in Goa with a very clear script.</h2>
+        <p class="ch-p">Good daughter, good student, good wife. At 23, I moved to the US after an arranged marriage — a dependent on someone else's visa, in someone else's life, in a country I was still learning to navigate. The marriage turned out to be abusive. The path that had been charted for me was not one I was going to stay on. So I changed the plan.</p>
+      </div>
+    </div>
+    <div class="chapter">
+      <div class="ch-mark">The moment things changed</div>
+      <div>
+        <h2 class="ch-h">Carnegie Mellon. Under 4% acceptance. Last round.</h2>
+        <p class="ch-p">I studied nights while my husband slept. Then a false report from my ex triggered a university investigation. A minor irregularity in authorized on-campus work collapsed my immigration status overnight. Months of legal research, institutional dead ends, thousands of dollars. I eventually had to leave. I packed my life in two days.</p>
+        <div class="ch-pull">I lived the exact problem Pikl solves. Not in theory — in a Pittsburgh apartment, at 2am, alone.</div>
+      </div>
+    </div>
+    <div class="chapter">
+      <div class="ch-mark">What I learned about products</div>
+      <div>
+        <h2 class="ch-h">I kept thinking about how avoidable so much of it had been.</h2>
+        <p class="ch-p">Not the abuse. But the cascading failures — the confusion, the opacity, the absence of any trusted place to think clearly before making irreversible decisions. That's when I understood what kind of products I want to spend my life building. Not products that inform. Products that help people decide.</p>
+      </div>
+    </div>
+    <div class="chapter">
+      <div class="ch-mark">Why Pikl is the convergence</div>
+      <div>
+        <h2 class="ch-h">Pikl is the most personal version of everything I've built.</h2>
+        <p class="ch-p">6+ years building AI-enabled products in analytics, education, compliance, and safety — all high-stakes, all built around users who couldn't afford to get it wrong. Pikl is where that experience and that pain arrive at the same place. I'm building the product I once needed. And I'm not going to stop until it exists.</p>
+        <div class="ch-cta" onclick="go('pikl')">See what I'm building →</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ WORK ════ -->
+<div class="pg" id="pg-work">
+  <div class="work-top">
+    <h1 class="work-h1">Built across hard domains.<br>Same instinct every time.</h1>
+    <p class="work-sub">Complex, high-stakes systems that users are supposed to navigate — and don't. That's the problem I keep choosing.</p>
+  </div>
+  <div class="cases">
+    <div class="case">
+      <div>
+        <div class="case-tag">AI Analytics · 3,000+ users</div>
+        <div class="case-n">35%</div>
+        <div class="case-ns">task completion · adoption +28%</div>
+        <h2 class="case-h">Making AI analytics actually usable</h2>
+      </div>
+      <div>
+        <div class="case-sit">The situation</div>
+        <p class="case-p">An AI-powered analytics platform with strong underlying capabilities and a user experience getting in the way. Defined product strategy, led cross-functional teams, delivered three major releases, ran A/B experiments and metrics governance to close the gap between what the product could do and what users could get done.</p>
+        <div class="case-il">What I learned</div>
+        <div class="case-i">"The most common failure in AI products isn't the model — it's the moment between insight and action. That's the design problem."</div>
+      </div>
+    </div>
+    <div class="case">
+      <div>
+        <div class="case-tag">EdTech · Indian K-12</div>
+        <div class="case-n">+14%</div>
+        <div class="case-ns">premium conversion · retention +12%</div>
+        <h2 class="case-h">Designing for students who don't finish</h2>
+      </div>
+      <div>
+        <div class="case-sit">The situation</div>
+        <p class="case-p">An ESL learning platform with a conversion and retention problem buried inside the onboarding experience. Owned the roadmap end to end, ran hypothesis-driven experimentation on onboarding loops, and integrated live learning as a feature that turned passive scrollers into paying students.</p>
+        <div class="case-il">What I learned</div>
+        <div class="case-i">"First sessions are irreversible. Students who don't find value don't come back. That shapes every onboarding moment — including Pikl's."</div>
+      </div>
+    </div>
+    <div class="case">
+      <div>
+        <div class="case-tag">Compliance & Safety · 2 engagements</div>
+        <div class="case-n">67%</div>
+        <div class="case-ns">faster filings · errors –30%</div>
+        <h2 class="case-h">Reducing the cost of getting compliance wrong</h2>
+      </div>
+      <div>
+        <div class="case-sit">The situation</div>
+        <p class="case-p">Two engagements — a respiratory medical device company and an industrial safety platform — both involving workflows where errors weren't just inefficient. Dangerous. Designed for users who need to trust the system before they'll rely on it.</p>
+        <div class="case-il">What I learned</div>
+        <div class="case-i">"Removing friction isn't a UX improvement. In high-stakes systems, it's a safety improvement."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ PIKL ════ -->
+<div class="pg" id="pg-pikl">
+  <section class="pikl-hero">
+    <div class="pikl-hero-glow"></div>
+    <svg class="pikl-ghost-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <text x="-2%" y="95%" text-anchor="start" dominant-baseline="auto"
+        font-family="Syne,system-ui,sans-serif" font-size="300" font-weight="800"
+        fill="rgba(200,241,53,0.04)" letter-spacing="-15">PIKL</text>
+    </svg>
+    <div class="pikl-content">
+      <div class="pikl-pill"><span class="pikl-pill-dot"></span>early access · building now</div>
+      <h1 class="pikl-h1">
+        Your OPT.<br>
+        Your offer.<br>
+        <span class="lime">Figured out.</span>
+      </h1>
+      <p class="pikl-sub">Stop scrolling Reddit at midnight. Pikl is your private decision layer — it takes your actual situation and tells you exactly what to do next.</p>
+      <div class="trust-row">
+        <div class="tc"><div class="tc-ck">✓</div>your data stays yours</div>
+        <div class="tc"><div class="tc-ck">✓</div>invisible to your school</div>
+        <div class="tc"><div class="tc-ck">✓</div>not legal advice — more useful</div>
+      </div>
+      <div class="pikl-ctas">
+        <div class="btn-lime">figure out my situation →</div>
+        <div class="btn-out">see how it works</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pikl-mq">
+    <div class="pikl-mq-inner" id="pikl-mq-track">
+      <span class="pmi">OPT timing <em>★</em></span>
+      <span class="pmi">CPT eligibility <em>★</em></span>
+      <span class="pmi">DSO conversations <em>★</em></span>
+      <span class="pmi">job offer review <em>★</em></span>
+      <span class="pmi">no more Reddit spirals <em>★</em></span>
+      <span class="pmi">your data stays yours <em>★</em></span>
+      <span class="pmi">F-1 decisions made clear <em>★</em></span>
+      <span class="pmi">status clarity <em>★</em></span>
+    </div>
+  </div>
+
+  <div class="pikl-prob">
+    <div class="pikl-prob-label">The real situation</div>
+    <h2 class="pikl-prob-h">You're making <span class="coral">life-altering decisions</span> with zero reliable info.</h2>
+    <div class="pain-grid">
+      <div class="pain a"><div class="pain-h">Reddit is fast and often wrong</div><div class="pain-p">One bad answer in a high-stakes moment is worse than no answer at all.</div></div>
+      <div class="pain b"><div class="pain-h">DSO office hours are slow</div><div class="pain-p">You need clarity now. Waiting two weeks for an appointment doesn't work.</div></div>
+      <div class="pain c"><div class="pain-h">School portals are built for schools</div><div class="pain-p">Not for you, your situation, your actual offer letter on the table.</div></div>
+      <div class="pain d"><div class="pain-h">Your situation isn't a textbook case</div><div class="pain-p">Generic guidance is accurate in theory and useless in practice.</div></div>
+    </div>
+    <div class="pikl-stat">
+      <div class="pikl-stat-n">1.1M</div>
+      <div class="pikl-stat-sub">international students in the US navigating this right now. Most of them alone.</div>
+    </div>
+  </div>
+
+  <div class="pikl-use">
+    <h2 class="pikl-use-h">Three questions every F-1 student dreads.<br><span class="lime">Answered.</span></h2>
+    <div class="use-list">
+      <div class="use-item">
+        <span class="use-n">01</span>
+        <div><div class="use-q">"Can I take this job or internship?"</div><div class="use-a">You got an offer. You're not sure if it's safe, if you need CPT, or what to do before you say yes. Pikl evaluates the role, flags what's missing, and helps you walk into the DSO conversation prepared — not panicked.</div></div>
+      </div>
+      <div class="use-item">
+        <span class="use-n">02</span>
+        <div><div class="use-q">"What do I need to do about OPT — and when?"</div><div class="use-a">OPT timing is unforgiving. Miss a window and you lose months. Pikl turns your graduation date, offer status, and current stage into a real timeline with the decisions that matter and the deadlines you can't afford to miss.</div></div>
+      </div>
+      <div class="use-item">
+        <span class="use-n">03</span>
+        <div><div class="use-q">"Do I need to talk to my DSO — and how?"</div><div class="use-a">When something feels off, most students either say too much or wait too long. Pikl helps you understand what you're dealing with, what to bring, and how to open the conversation without making it harder than it needs to be.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pikl-trust">
+    <div class="pt-label">Because you've been burned before</div>
+    <h2 class="pt-h">Your situation.<br>Your data.<br>Your call.</h2>
+    <div class="pt-grid">
+      <div class="pt-card"><div class="pt-card-h">Student-owned by design</div><div class="pt-card-p">Everything you share with Pikl belongs to you. Not your school, not your employer, not anyone else.</div></div>
+      <div class="pt-card"><div class="pt-card-h">Patterns, not people</div><div class="pt-card-p">If your university partners with Pikl, they get anonymized trend data only. They never see your questions or your case.</div></div>
+      <div class="pt-card"><div class="pt-card-h">Not legal advice — more useful</div><div class="pt-card-p">Pikl helps you understand your situation and what to ask. Lawyers answer those questions. Pikl helps you show up ready.</div></div>
+    </div>
+  </div>
+
+  <div class="pikl-vision">
+    <div class="pv-label">The goal</div>
+    <h2 class="pv-h">The student is never the least-prepared person in the room.</h2>
+    <p class="pv-p">Pikl starts with the moment of decision — the job offer, the OPT deadline, the question you don't know how to ask. Over time it becomes the student-side operating layer for international students navigating work, compliance, and status across their entire time in the US.</p>
+    <div class="pv-pull">Not to replace any institution.<br>To make sure the student arrives ready.</div>
+  </div>
+
+  <div class="pikl-final">
+    <h2 class="pf-h">Stop guessing.<br><span class="lime">Start knowing.</span></h2>
+    <div class="pf-sub">Early access is open. Join now and be part of building something that should've existed years ago.</div>
+    <div class="pf-ctas">
+      <div class="btn-lime">get early access →</div>
+      <div class="btn-out">follow the build</div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="f-logo">pikl</div>
+    <div class="f-links"><span class="f-link">rbp1307@gmail.com</span><span class="f-link">LinkedIn</span></div>
+    <div class="f-note">building in public · bengaluru · 2026</div>
+  </footer>
+</div>
+
+<!-- ════ BUILD LOG ════ -->
+<div class="pg" id="pg-log">
+  <div class="log-top">
+    <svg class="log-ghost-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <text x="101%" y="92%" text-anchor="end" dominant-baseline="auto"
+        font-family="Syne,system-ui,sans-serif" font-size="240" font-weight="800"
+        fill="rgba(200,241,53,0.038)" letter-spacing="-12">LOG</text>
+    </svg>
+    <div class="log-content">
+      <div class="pg-num">05 — Build Log</div>
+      <h1 class="log-h1">Building Pikl means thinking out loud.</h1>
+      <p class="log-sub">Not a blog. A working record — what I'm building, what changed, what I cut, what I'm figuring out.</p>
+    </div>
+  </div>
+  <div class="log-list">
+    <div class="log-e">
+      <div class="log-d">Apr 2026</div>
+      <div><div class="log-t">Why I stopped calling it a platform</div><div class="log-p">Every time I described Pikl as a platform, the idea got bigger and blurrier. A platform implies infrastructure. What I'm actually building is a moment — the moment before a student makes a decision they can't take back. So I stopped calling it a platform and started calling it a decision layer. That one word change made everything else clearer.</div></div>
+    </div>
+    <div class="log-e">
+      <div class="log-d">Mar 2026</div>
+      <div><div class="log-t">Locking the three core flows</div><div class="log-p">Job offer review. OPT timeline. DSO conversation prep. These are the three moments where international students are most alone and most likely to make an irreversible mistake. Everything else can come later. The MVP is the three flows done well.</div></div>
+    </div>
+    <div class="log-e">
+      <div class="log-d">Feb 2026</div>
+      <div><div class="log-t">From pain to product: sharpening the positioning</div><div class="log-p">Spent two weeks interviewing international students. The pattern is always the same: the information exists somewhere, but there's no trusted private space to apply it to their actual situation before acting. That's the gap. That's Pikl.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ CONTACT ════ -->
+<div class="pg" id="pg-contact">
+  <div class="contact-wrap">
+    <h1 class="contact-h">Thanks for stopping here.</h1>
+    <p class="contact-note">If Pikl resonates — as a user, collaborator, advisor, or investor — I'd like to hear from you. I'm also always interested in talking to international students who have navigated this system and have something real to say about it.</p>
+    <div class="contact-rows">
+      <div class="cr"><span class="cr-l">Email</span><span class="cr-v">rbp1307@gmail.com</span></div>
+      <div class="cr"><span class="cr-l">LinkedIn</span><span class="cr-v">linkedin.com/in/rujutaparulekar</span></div>
+    </div>
+    <div class="contact-close">Currently building Pikl. Based in Bengaluru.</div>
+  </div>
+</div>
+
+<script>
+const ids=['home','why','work','pikl','log','contact'];
+
+function go(id){
+  ids.forEach(n=>{
+    const p=document.getElementById('pg-'+n);
+    const l=document.getElementById('nl-'+n);
+    if(p)p.classList.remove('on');
+    if(l)l.classList.remove('on');
+  });
+  const p=document.getElementById('pg-'+id);
+  const l=document.getElementById('nl-'+id);
+  if(p)p.classList.add('on');
+  if(l)l.classList.add('on');
+  window.scrollTo(0,0);
+}
+
+/* JS rAF tickers — frame-perfect, immune to iframe quirks */
+function makeTicker(trackId, speed){
+  const track = document.getElementById(trackId);
+  if(!track) return;
+  const orig = track.innerHTML;
+  track.innerHTML = orig + orig;
+  let x = 0;
+  const half = () => track.scrollWidth / 2;
+  function frame(){
+    x -= speed;
+    if(Math.abs(x) >= half()) x = 0;
+    track.style.transform = `translateX(${x}px)`;
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+}
+
+makeTicker('ticker-home', 0.6);
+makeTicker('pikl-mq-track', 0.55);
+
+go('home');
+</script>
