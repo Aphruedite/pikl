@@ -3,63 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pikl</title>
-  <meta name="description" content="Pikl is a private decision layer for international students in the U.S. navigating jobs, OPT, and DSO conversations." />
+  <title>Pikl — founder-led product portfolio</title>
+  <meta name="description" content="Pikl is a private decision layer for international students in the U.S. This site also shows the three projects that sharpened its thesis." />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
 
     :root {
       --bg: #0d0c09;
-      --surface: #13110d;
+      --surface: #14120e;
       --surface-soft: rgba(242, 238, 227, 0.04);
       --surface-card: rgba(242, 238, 227, 0.05);
+      --surface-card-strong: rgba(242, 238, 227, 0.07);
       --surface-light: #ece7db;
-      --surface-light-card: #e4dfd2;
+      --surface-light-card: #dfd8c8;
       --text: #f2eee3;
-      --text-strong: rgba(242, 238, 227, 0.92);
-      --text-secondary: rgba(242, 238, 227, 0.78);
-      --text-muted: rgba(242, 238, 227, 0.68);
-      --text-dim: rgba(242, 238, 227, 0.54);
+      --text-strong: rgba(242, 238, 227, 0.96);
+      --text-secondary: rgba(242, 238, 227, 0.82);
+      --text-muted: rgba(242, 238, 227, 0.7);
+      --text-dim: rgba(242, 238, 227, 0.56);
       --line: rgba(242, 238, 227, 0.09);
       --line-strong: rgba(242, 238, 227, 0.18);
+      --ink: #11100c;
+      --ink-soft: rgba(17, 16, 12, 0.8);
+      --ink-dim: rgba(17, 16, 12, 0.6);
       --lime: #c8f135;
       --coral: #ff5c3a;
       --sky: #89cfff;
       --purple: #a87cff;
-      --ink: #11100c;
-      --ink-soft: rgba(17, 16, 12, 0.78);
-      --ink-dim: rgba(17, 16, 12, 0.6);
+      --green: #1c5b39;
       --serif: 'Instrument Serif', Georgia, serif;
       --display: 'Syne', system-ui, sans-serif;
       --sans: 'DM Sans', system-ui, sans-serif;
-      --shadow: 0 0 0 1px rgba(242,238,227,0.02), 0 8px 32px rgba(0,0,0,0.24);
-      --radius-sm: 12px;
-      --radius-md: 18px;
-      --radius-lg: 28px;
-      --radius-pill: 999px;
       --container: 1180px;
       --reading: 760px;
-      --space-1: 0.25rem;
-      --space-2: 0.5rem;
-      --space-3: 0.75rem;
-      --space-4: 1rem;
-      --space-5: 1.5rem;
-      --space-6: 2rem;
-      --space-7: 3rem;
-      --space-8: 4rem;
-      --space-9: 5rem;
-      --space-10: 6rem;
-      --pad-x: clamp(1rem, 2.4vw, 2rem);
-      --section-y: clamp(3.75rem, 7vw, 6rem);
-      --display-xl: clamp(3.3rem, 8vw, 6.6rem);
-      --display-lg: clamp(2.6rem, 5.8vw, 4.8rem);
-      --display-md: clamp(2.1rem, 4.4vw, 3.5rem);
-      --heading-lg: clamp(1.7rem, 2.8vw, 2.5rem);
-      --heading-md: clamp(1.35rem, 2vw, 1.85rem);
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 30px;
+      --radius-pill: 999px;
+      --pad-x: clamp(1rem, 2.5vw, 2rem);
+      --section-y: clamp(3.75rem, 7vw, 6.4rem);
+      --display-xl: clamp(3.2rem, 8vw, 6.6rem);
+      --display-lg: clamp(2.5rem, 5.4vw, 4.9rem);
+      --display-md: clamp(2rem, 4.2vw, 3.4rem);
+      --heading-lg: clamp(1.7rem, 2.8vw, 2.4rem);
+      --heading-md: clamp(1.35rem, 2vw, 1.8rem);
       --body-xl: clamp(1.08rem, 1.3vw, 1.2rem);
-      --body: clamp(1rem, 1.1vw, 1.08rem);
-      --body-sm: clamp(0.94rem, 1vw, 1rem);
+      --body: clamp(1rem, 1.05vw, 1.08rem);
+      --body-sm: clamp(0.94rem, 0.98vw, 1rem);
       --label: clamp(0.76rem, 0.9vw, 0.84rem);
+      --shadow: 0 0 0 1px rgba(242,238,227,0.02), 0 18px 48px rgba(0,0,0,0.28);
       --ease: 180ms ease;
     }
 
@@ -70,29 +62,17 @@
       background: var(--bg);
       color: var(--text);
       font-family: var(--sans);
-      line-height: 1.6;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       overflow-x: hidden;
     }
-    img, svg { display: block; max-width: 100%; }
+    img, video { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
-    button { font: inherit; border: none; background: none; cursor: pointer; }
+    button { border: none; background: none; font: inherit; cursor: pointer; }
     :focus-visible { outline: 2px solid var(--lime); outline-offset: 4px; }
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
 
-    .page { display: none; }
-    .page.active { display: block; animation: fadeUp 220ms ease both; }
+    .page { display: block; min-height: auto; scroll-margin-top: 84px; }
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
@@ -106,48 +86,117 @@
       width: min(calc(100% - 2 * var(--pad-x)), var(--reading));
       margin: 0 auto;
     }
-    .section {
-      padding: var(--section-y) var(--pad-x);
-    }
+    .section { padding: var(--section-y) var(--pad-x); }
     .divider { border-top: 1px solid var(--line); }
-    .muted { color: var(--text-muted); }
-    .dim { color: var(--text-dim); }
-    .lime { color: var(--lime); }
-
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 0.7rem;
+      gap: .7rem;
       font-size: var(--label);
-      letter-spacing: 0.12em;
+      letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--text-dim);
-      margin-bottom: 1.2rem;
-      font-weight: 600;
+      font-weight: 700;
+      margin-bottom: 1rem;
     }
     .eyebrow::before {
       content: '';
       width: 18px;
       height: 1px;
       background: currentColor;
-      opacity: 0.8;
+      opacity: .9;
     }
+    .section-title {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: var(--display-lg);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      margin: 0 0 1rem;
+      max-width: 14ch;
+    }
+    .section-title strong,
+    .section-title .accent { color: var(--lime); font-family: var(--display); font-weight: 800; }
+    .section-intro {
+      font-size: var(--body-xl);
+      color: var(--text-secondary);
+      max-width: 44rem;
+      margin: 0;
+    }
+    .lede {
+      font-size: var(--body-xl);
+      color: var(--text-secondary);
+      max-width: 42rem;
+    }
+    .note {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: var(--body-xl);
+      color: var(--text-secondary);
+      max-width: 40rem;
+    }
+    .divider-line { border-top: 1px solid var(--line); margin-top: 2rem; }
 
-    .btn-row {
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(13, 12, 9, 0.9);
+      border-bottom: 1px solid var(--line);
+    }
+    .site-nav-inner {
+      width: min(calc(100% - 2 * var(--pad-x)), var(--container));
+      margin: 0 auto;
+      height: 72px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
       align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      font-family: var(--display);
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--lime);
+    }
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: .25rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex: 1;
+    }
+    .nav-link {
+      color: var(--text-muted);
+      font-size: var(--body-sm);
+      font-weight: 600;
+      padding: .55rem .78rem;
+      border-radius: var(--radius-pill);
+      transition: color var(--ease), background var(--ease);
+    }
+    .nav-link:hover { background: rgba(242,238,227,0.05); color: var(--text); }
+    .nav-link.active { color: var(--text); background: rgba(242,238,227,0.07); }
+    .nav-link.product { color: var(--lime); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      flex-shrink: 0;
     }
     .btn {
       min-height: 48px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.85rem 1.4rem;
+      padding: .85rem 1.4rem;
       border-radius: var(--radius-pill);
       font-size: var(--body-sm);
-      font-weight: 600;
+      font-weight: 700;
       transition: transform var(--ease), border-color var(--ease), background var(--ease), color var(--ease);
       white-space: nowrap;
     }
@@ -156,1214 +205,1324 @@
       background: var(--lime);
       color: var(--ink);
       font-family: var(--display);
-      font-weight: 700;
     }
     .btn-secondary {
       border: 1px solid var(--line-strong);
       color: var(--text-secondary);
       background: rgba(242,238,227,0.02);
     }
-    .btn-secondary:hover { border-color: rgba(242,238,227,0.35); color: var(--text); }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      border-radius: var(--radius-pill);
-      padding: 0.45rem 0.85rem;
-      font-size: var(--label);
-      letter-spacing: 0.03em;
-      font-weight: 600;
-      border: 1px solid transparent;
-    }
-    .pill.lime {
-      color: var(--lime);
-      background: rgba(200,241,53,0.08);
-      border-color: rgba(200,241,53,0.15);
-    }
-    .pill.sky {
-      color: var(--sky);
-      background: rgba(137,207,255,0.08);
-      border-color: rgba(137,207,255,0.16);
-    }
-    .pill::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: currentColor;
-      opacity: 0.95;
+    .btn-secondary:hover { color: var(--text); border-color: rgba(242,238,227,0.32); }
+    .btn-ghost {
+      color: var(--text-muted);
+      padding-inline: .5rem;
+      min-height: auto;
     }
 
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-    }
-    .chip {
-      padding: 0.58rem 0.9rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--line);
-      background: rgba(242,238,227,0.03);
-      color: var(--text-secondary);
-      font-size: var(--body-sm);
-      line-height: 1.3;
-    }
-
-    .site-nav {
-      position: sticky;
-      top: 0;
-      z-index: 60;
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      background: rgba(13,12,9,0.9);
-      border-bottom: 1px solid var(--line);
-    }
-    .site-nav-inner {
-      height: 68px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0 var(--pad-x);
-    }
-    .brand {
-      font-family: var(--display);
-      font-size: 1.7rem;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      color: var(--lime);
-      line-height: 1;
-      flex-shrink: 0;
-    }
-    .desktop-nav {
-      display: flex;
-      align-items: center;
-      gap: 0.2rem;
-    }
-    .nav-link {
-      color: var(--text-secondary);
-      font-size: 0.98rem;
-      padding: 0.65rem 0.9rem;
-      border-radius: var(--radius-pill);
-      transition: background var(--ease), color var(--ease);
-    }
-    .nav-link:hover { background: rgba(242,238,227,0.05); color: var(--text); }
-    .nav-link.active {
-      color: var(--text);
-      background: rgba(242,238,227,0.06);
-    }
-    .nav-link.product { color: var(--lime); }
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      flex-shrink: 0;
-    }
-    .nav-cta {
-      background: var(--lime);
-      color: var(--ink);
-      padding: 0.78rem 1.2rem;
-      border-radius: var(--radius-pill);
-      font-family: var(--display);
-      font-size: 0.98rem;
-      font-weight: 700;
-    }
     .menu-btn {
       display: none;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      border: 1px solid var(--line-strong);
       color: var(--text);
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
+      padding: .4rem .65rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--line);
     }
-
     .mobile-menu {
+      display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.5);
-      display: none;
-      z-index: 80;
+      z-index: 90;
+      background: rgba(13, 12, 9, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 1rem;
     }
     .mobile-menu.open { display: block; }
-    .mobile-panel {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: min(90vw, 360px);
-      height: 100%;
-      background: #12100c;
-      border-left: 1px solid var(--line);
-      box-shadow: -20px 0 50px rgba(0,0,0,0.3);
+    .mobile-menu-inner {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 24px;
       padding: 1rem;
+      box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: .5rem;
+      max-width: 28rem;
+      margin-left: auto;
     }
-    .mobile-panel-top {
+    .mobile-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 0.8rem;
-    }
-    .mobile-close {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 1px solid var(--line-strong);
-      color: var(--text);
-      font-size: 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: .35rem;
     }
     .mobile-nav-link {
-      padding: 0.95rem 1rem;
-      border-radius: var(--radius-md);
-      background: rgba(242,238,227,0.03);
-      color: var(--text-secondary);
-      font-size: 1rem;
-      text-align: left;
-    }
-    .mobile-nav-link.active {
-      background: rgba(242,238,227,0.07);
-      color: var(--text);
-    }
-    .mobile-cta {
-      margin-top: 0.5rem;
       width: 100%;
+      text-align: left;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      padding: .95rem 1rem;
+      border-radius: 16px;
+      background: rgba(242,238,227,0.02);
     }
+    .mobile-nav-link.active { color: var(--text); background: rgba(242,238,227,0.08); }
 
     .hero {
+      min-height: clamp(560px, 74vh, 760px);
+      display: flex;
+      align-items: center;
+      padding: calc(var(--section-y) - 1rem) var(--pad-x) var(--section-y);
       position: relative;
-      padding: clamp(5rem, 10vw, 7rem) var(--pad-x) clamp(3rem, 6vw, 4.5rem);
-      border-bottom: 1px solid var(--line);
       overflow: hidden;
     }
-    .hero::after {
+    .hero::before {
       content: '';
       position: absolute;
-      right: -15%;
-      top: 10%;
-      width: 52vw;
-      height: 52vw;
-      max-width: 720px;
-      max-height: 720px;
-      background: radial-gradient(circle, rgba(200,241,53,0.10) 0%, rgba(200,241,53,0.02) 28%, transparent 68%);
+      inset: 0;
+      background:
+        radial-gradient(circle at 78% 22%, rgba(200,241,53,.10), transparent 32%),
+        radial-gradient(circle at 78% 70%, rgba(168,124,255,.06), transparent 26%);
       pointer-events: none;
     }
     .hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
-      gap: clamp(2rem, 4vw, 4rem);
-      align-items: start;
       width: min(calc(100% - 2 * var(--pad-x)), var(--container));
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: clamp(2rem, 4vw, 5rem);
+      align-items: end;
+      position: relative;
+      z-index: 2;
     }
     .hero-title {
-      font-family: var(--display);
       font-size: var(--display-xl);
-      line-height: 0.92;
+      font-family: var(--display);
+      font-weight: 800;
+      line-height: .95;
       letter-spacing: -0.05em;
-      margin: 0 0 1.25rem;
-      max-width: 10ch;
-    }
-    .hero-title .soft { color: var(--text); }
-    .hero-title .accent { color: var(--lime); }
-    .hero-copy {
-      max-width: 31rem;
-      font-size: var(--body-xl);
-      color: var(--text-secondary);
-      margin: 0 0 1.6rem;
-      line-height: 1.65;
-    }
-    .hero-subnote {
-      max-width: 32rem;
-      font-size: var(--body-sm);
-      color: var(--text-muted);
-      margin: 1rem 0 0;
-    }
-    .hero-side {
-      background: linear-gradient(180deg, rgba(242,238,227,0.05), rgba(242,238,227,0.025));
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      padding: 1.4rem;
-      box-shadow: var(--shadow);
-      align-self: end;
-    }
-    .hero-side h3 {
-      font-family: var(--serif);
-      font-weight: 400;
-      font-size: clamp(1.35rem, 2vw, 1.8rem);
-      line-height: 1.15;
-      margin: 0 0 0.9rem;
-      color: var(--text-strong);
-    }
-    .hero-side p {
-      margin: 0 0 1rem;
-      color: var(--text-secondary);
-      font-size: var(--body-sm);
-    }
-    .hero-list {
-      display: grid;
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
-    .hero-list-item {
-      padding: 0.85rem 0.95rem;
-      border-radius: var(--radius-md);
-      background: rgba(242,238,227,0.03);
-      border: 1px solid rgba(242,238,227,0.06);
-      font-size: var(--body-sm);
-      color: var(--text-secondary);
-    }
-
-    .product-strip {
-      padding: 1.1rem var(--pad-x);
-      border-bottom: 1px solid var(--line);
-      overflow: hidden;
-    }
-    .ticker {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.1rem 2rem;
-      width: min(calc(100% - 2 * var(--pad-x)), var(--container));
-      margin: 0 auto;
-      color: var(--text-dim);
-      font-size: var(--body-sm);
-      font-weight: 600;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    .section-title {
-      font-family: var(--serif);
-      font-size: var(--display-md);
-      line-height: 1.03;
-      letter-spacing: -0.03em;
-      margin: 0;
-      max-width: 15ch;
-      font-weight: 400;
-    }
-    .section-title.display {
-      font-family: var(--display);
-      font-weight: 800;
-      line-height: 0.96;
-      letter-spacing: -0.05em;
-    }
-    .section-intro {
-      max-width: 34rem;
-      font-size: var(--body-xl);
-      color: var(--text-secondary);
-      margin: 0;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-    }
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-    }
-    .stack { display: grid; gap: 1rem; }
-
-    .card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      padding: 1.4rem;
-      background: linear-gradient(180deg, rgba(242,238,227,0.04), rgba(242,238,227,0.02));
-      box-shadow: var(--shadow);
-      min-width: 0;
-    }
-    .card.light {
-      background: var(--surface-light-card);
-      color: var(--ink);
-      border-color: rgba(17,16,12,0.08);
-      box-shadow: none;
-    }
-    .card-tag {
-      display: inline-block;
-      font-size: var(--label);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-dim);
-      margin-bottom: 0.8rem;
-      font-weight: 600;
-    }
-    .card.light .card-tag { color: var(--ink-dim); }
-    .metric {
-      font-family: var(--display);
-      font-size: clamp(2.8rem, 5vw, 4rem);
-      line-height: 0.94;
-      letter-spacing: -0.05em;
-      font-weight: 800;
-      margin: 0 0 0.25rem;
-    }
-    .metric-sub {
-      font-size: var(--body-sm);
-      color: var(--text-dim);
-      margin-bottom: 1rem;
-    }
-    .card.light .metric-sub { color: var(--ink-dim); }
-    .card h3 {
-      font-family: var(--serif);
-      font-weight: 400;
-      font-size: clamp(1.3rem, 2vw, 1.7rem);
-      line-height: 1.15;
-      margin: 0 0 0.8rem;
-    }
-    .card.display-title h3 {
-      font-family: var(--display);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-    }
-    .card p {
-      margin: 0;
-      color: var(--text-secondary);
-      font-size: var(--body-sm);
-    }
-    .card.light p { color: var(--ink-soft); }
-    .card-quote {
-      margin-top: 1rem;
-      padding-top: 0.9rem;
-      border-top: 1px solid var(--line);
-      color: var(--text-muted);
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: var(--body-sm);
-      line-height: 1.55;
-    }
-    .card.light .card-quote {
-      border-top-color: rgba(17,16,12,0.1);
-      color: rgba(17,16,12,0.68);
-    }
-    .card.accent-coral { border-top: 2px solid var(--coral); }
-    .card.accent-purple { border-top: 2px solid var(--purple); }
-    .card.accent-sky { border-top: 2px solid var(--sky); }
-    .card.accent-lime { border-top: 2px solid var(--lime); }
-
-    .use-case {
-      padding: 1.2rem 0;
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 1rem;
-      border-top: 1px solid var(--line);
-    }
-    .use-case:first-child { border-top: 1px solid var(--line); }
-    .use-n {
-      font-family: var(--display);
-      font-weight: 800;
-      color: var(--lime);
-      font-size: var(--label);
-      padding-top: 0.3rem;
-    }
-    .use-case h3 {
-      font-family: var(--display);
-      font-size: clamp(1.35rem, 2.4vw, 1.9rem);
-      line-height: 1.12;
-      letter-spacing: -0.03em;
-      margin: 0 0 0.55rem;
-    }
-    .use-case p {
-      margin: 0;
-      max-width: 72ch;
-      color: var(--text-secondary);
-      font-size: var(--body);
-    }
-
-    .split-feature {
-      display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-      gap: clamp(1.6rem, 4vw, 3.5rem);
-      align-items: start;
-    }
-    .feature-copy p {
-      font-size: var(--body-xl);
-      color: var(--text-secondary);
-      max-width: 36rem;
-      margin: 0 0 1.1rem;
-    }
-    .pull {
-      padding-left: 1rem;
-      border-left: 2px solid var(--lime);
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: clamp(1.14rem, 1.5vw, 1.3rem);
-      color: var(--text-strong);
-      line-height: 1.45;
-      max-width: 26rem;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 1rem;
-    }
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 110px 1fr;
-      gap: 1.2rem;
-      padding: 1.2rem 0;
-      border-top: 1px solid var(--line);
-    }
-    .timeline-date {
-      font-size: var(--body-sm);
-      color: var(--text-dim);
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      letter-spacing: 0.04em;
-      padding-top: 0.2rem;
-    }
-    .timeline-item h3 {
-      margin: 0 0 0.35rem;
-      font-size: clamp(1.25rem, 2vw, 1.55rem);
-      line-height: 1.2;
-      font-weight: 700;
-    }
-    .timeline-item p {
-      margin: 0;
-      color: var(--text-secondary);
-      font-size: var(--body);
-      max-width: 80ch;
-    }
-
-    .story-hero {
-      position: relative;
-      padding: clamp(4.4rem, 8vw, 6.5rem) var(--pad-x) clamp(2rem, 4vw, 3rem);
-      border-bottom: 1px solid var(--line);
-      overflow: hidden;
-    }
-    .story-hero::after {
-      content: 'WHY';
-      position: absolute;
-      right: -2%;
-      bottom: -9%;
-      font-family: var(--display);
-      font-size: clamp(8rem, 22vw, 18rem);
-      font-weight: 800;
-      line-height: 0.85;
-      letter-spacing: -0.08em;
-      color: rgba(200,241,53,0.045);
-      pointer-events: none;
-    }
-    .story-grid {
-      display: grid;
-      grid-template-columns: 180px minmax(0, 1fr);
-      gap: clamp(1.5rem, 3vw, 2.6rem);
-      padding: 2rem 0;
-      border-top: 1px solid var(--line);
-    }
-    .story-grid:first-child { border-top: none; }
-    .story-label {
-      font-size: var(--label);
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      color: var(--text-dim);
-      font-weight: 600;
-      padding-top: 0.35rem;
-    }
-    .story-body h2 {
-      font-family: var(--serif);
-      font-weight: 400;
-      font-size: clamp(1.6rem, 2.5vw, 2.1rem);
-      line-height: 1.16;
-      margin: 0 0 0.8rem;
-    }
-    .story-body p {
-      max-width: 44rem;
-      font-size: var(--body-xl);
-      color: var(--text-secondary);
-      margin: 0 0 1rem;
-      line-height: 1.72;
-    }
-
-    .work-row {
-      padding: 1.6rem 0;
-      border-top: 1px solid var(--line);
-      display: grid;
-      grid-template-columns: minmax(240px, 0.82fr) minmax(0, 1.18fr);
-      gap: 2rem;
-      align-items: start;
-    }
-    .work-row:first-child { border-top: 1px solid var(--line); }
-    .work-meta {
-      display: grid;
-      gap: 0.7rem;
-    }
-    .work-meta .metric { margin-bottom: 0; }
-    .work-label {
-      font-size: var(--label);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-dim);
-      font-weight: 600;
-    }
-    .work-meta h3 {
-      font-family: var(--serif);
-      font-size: clamp(1.55rem, 2.2vw, 2rem);
-      font-weight: 400;
-      line-height: 1.14;
-      margin: 0;
-    }
-    .work-copy p {
-      font-size: var(--body-xl);
-      color: var(--text-secondary);
-      margin: 0 0 0.8rem;
-      max-width: 52rem;
-    }
-    .work-learned {
-      margin-top: 0.9rem;
-      color: var(--text-muted);
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: var(--body);
-      line-height: 1.6;
-      max-width: 44rem;
-    }
-
-    .product-hero {
-      position: relative;
-      padding: clamp(4.8rem, 8vw, 6rem) var(--pad-x) 3rem;
-      border-bottom: 1px solid var(--line);
-      overflow: hidden;
-    }
-    .product-hero::after {
-      content: 'PIKL';
-      position: absolute;
-      right: -1%;
-      bottom: -10%;
-      font-family: var(--display);
-      font-size: clamp(8rem, 22vw, 16rem);
-      line-height: 0.8;
-      font-weight: 800;
-      letter-spacing: -0.08em;
-      color: rgba(200,241,53,0.045);
-      pointer-events: none;
-    }
-    .product-hero-inner {
-      position: relative;
-      z-index: 1;
-      width: min(calc(100% - 2 * var(--pad-x)), var(--container));
-      margin: 0 auto;
-    }
-    .product-title {
-      font-family: var(--display);
-      font-size: clamp(3rem, 7vw, 6rem);
-      line-height: 0.92;
-      letter-spacing: -0.06em;
-      font-weight: 800;
-      margin: 0 0 1rem;
+      margin: 0 0 1.2rem;
       max-width: 12ch;
     }
-    .product-title .line { display: block; }
-    .product-copy {
-      max-width: 32rem;
+    .hero-title .soft {
+      display: block;
+      color: var(--text);
+    }
+    .hero-title .lime { color: var(--lime); }
+    .hero-copy { max-width: 34rem; }
+    .hero-copy p {
       font-size: var(--body-xl);
       color: var(--text-secondary);
       margin: 0 0 1.4rem;
+      max-width: 33rem;
     }
-    .trust-chips {
+    .hero-panel {
+      background: linear-gradient(180deg, rgba(242,238,227,0.05), rgba(242,238,227,0.02));
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 1.35rem;
+      box-shadow: var(--shadow);
+      align-self: center;
+    }
+    .hero-panel h3 {
+      margin: 0 0 .65rem;
+      font-size: 1rem;
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: -.01em;
+    }
+    .hero-panel p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: var(--body-sm);
+    }
+    .chip-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.65rem;
-      margin: 1rem 0 1.4rem;
+      gap: .65rem;
+      margin-top: 1rem;
     }
-    .trust-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      border: 1px solid var(--line-strong);
+    .chip {
+      padding: .55rem .85rem;
       border-radius: var(--radius-pill);
-      padding: 0.6rem 0.82rem;
-      font-size: var(--body-sm);
+      border: 1px solid var(--line);
+      background: rgba(242,238,227,0.03);
       color: var(--text-secondary);
+      font-size: var(--body-sm);
+      line-height: 1.2;
+    }
+
+    .project-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .project-preview {
+      background: linear-gradient(180deg, rgba(242,238,227,0.05), rgba(242,238,227,0.03));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      box-shadow: var(--shadow);
+      transition: transform var(--ease), border-color var(--ease);
+    }
+    .project-preview:hover {
+      transform: translateY(-3px);
+      border-color: rgba(242,238,227,0.18);
+    }
+    .project-preview img {
+      aspect-ratio: 16 / 10;
+      width: 100%;
+      object-fit: cover;
+      border-bottom: 1px solid var(--line);
+    }
+    .project-preview-body {
+      padding: 1.2rem 1.2rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+      flex: 1;
+    }
+    .project-kicker {
+      color: var(--text-dim);
+      font-size: var(--label);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 700;
+    }
+    .project-preview h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: var(--heading-lg);
+      font-weight: 400;
+      line-height: 1;
+    }
+    .project-preview p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: var(--body);
+    }
+    .preview-footer {
+      margin-top: auto;
+      padding-top: .4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: .8rem;
+      color: var(--text-muted);
+      font-size: var(--body-sm);
+    }
+
+    .intro-block {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: clamp(2rem, 4vw, 5rem);
+      align-items: start;
+    }
+    .intro-block p {
+      margin: 0 0 1rem;
+      font-size: var(--body-xl);
+      color: var(--text-secondary);
+    }
+    .small-note {
+      color: var(--text-muted);
+      font-size: var(--body-sm);
+      padding: 1.1rem 1.15rem;
+      border: 1px solid var(--line);
+      border-radius: 20px;
       background: rgba(242,238,227,0.03);
     }
-    .trust-chip::before {
-      content: '✓';
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.72rem;
-      background: var(--lime);
-      color: var(--ink);
-      font-weight: 800;
-      flex-shrink: 0;
+
+    .why-list {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 1.25rem 2rem;
+      padding-top: 2rem;
+    }
+    .why-label {
+      color: var(--text-dim);
+      font-size: var(--label);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding-top: .35rem;
+    }
+    .why-copy {
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .why-copy h3 {
+      margin: 0 0 .75rem;
+      font-family: var(--serif);
+      font-size: var(--heading-lg);
+      font-weight: 400;
+      line-height: 1.08;
+      max-width: 18ch;
+    }
+    .why-copy p {
+      margin: 0;
+      font-size: var(--body-xl);
+      color: var(--text-secondary);
+      max-width: 35rem;
     }
 
     .light-band {
       background: var(--surface-light);
       color: var(--ink);
     }
-    .light-band .section-title.display,
     .light-band .section-title,
-    .light-band .section-intro { color: var(--ink); }
-    .light-band .section-intro { color: var(--ink-soft); }
-    .light-band .divider { border-color: rgba(17,16,12,0.08); }
+    .light-band h2,
+    .light-band h3 { color: var(--ink); }
+    .light-band .eyebrow,
+    .light-band .meta-label { color: var(--ink-dim); }
+    .light-band p,
+    .light-band li { color: var(--ink-soft); }
 
+    .artifact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.75rem;
+    }
+    .artifact {
+      background: rgba(242,238,227,0.03);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .artifact.wide { grid-column: 1 / -1; }
+    .artifact img, .artifact video {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      background: #0d0c09;
+    }
+    .artifact figcaption {
+      padding: .95rem 1rem 1rem;
+      color: var(--text-muted);
+      font-size: var(--body-sm);
+      line-height: 1.5;
+    }
+
+    .project-hero {
+      padding: calc(var(--section-y) - 1rem) var(--pad-x) var(--section-y);
+      position: relative;
+      overflow: hidden;
+    }
+    .project-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(13,12,9,0.92) 0%, rgba(13,12,9,0.76) 36%, rgba(13,12,9,0.2) 100%);
+      z-index: 1;
+    }
+    .project-hero.has-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: var(--hero-image);
+      background-size: cover;
+      background-position: center;
+      opacity: .55;
+      z-index: 0;
+    }
+    .project-hero-inner {
+      width: min(calc(100% - 2 * var(--pad-x)), var(--container));
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      min-height: 420px;
+      display: flex;
+      align-items: flex-end;
+    }
+    .project-hero-copy {
+      max-width: 46rem;
+      padding: 3rem 0 1rem;
+    }
+    .project-title {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: .96;
+      letter-spacing: -0.04em;
+      font-weight: 400;
+      margin: 0 0 1rem;
+    }
+    .project-title .accent {
+      display: block;
+      font-family: var(--display);
+      font-weight: 800;
+      color: var(--lime);
+    }
+    .project-subtitle {
+      font-size: var(--body-xl);
+      color: var(--text-secondary);
+      margin: 0 0 1rem;
+      max-width: 42rem;
+    }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .7rem;
+      margin-top: 1.35rem;
+    }
+    .meta-pill {
+      padding: .55rem .8rem;
+      background: rgba(242,238,227,0.06);
+      border: 1px solid rgba(242,238,227,0.15);
+      border-radius: var(--radius-pill);
+      color: var(--text-secondary);
+      font-size: var(--body-sm);
+      font-weight: 600;
+    }
+
+    .project-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 2rem;
+    }
+    .project-side {
+      color: var(--text-dim);
+      font-size: var(--label);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding-top: .3rem;
+    }
+    .project-main p {
+      margin: 0 0 1rem;
+      color: var(--text-secondary);
+      font-size: var(--body-xl);
+      max-width: 46rem;
+    }
+    .project-main h2 {
+      margin: 0 0 1rem;
+      font-size: var(--display-md);
+      line-height: .98;
+      font-family: var(--display);
+      letter-spacing: -0.03em;
+    }
+    .project-main h3 {
+      margin: 0 0 .75rem;
+      font-size: var(--heading-md);
+      font-weight: 700;
+      letter-spacing: -.02em;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1rem;
+      margin-top: 1.6rem;
+    }
+    .stat-card {
+      background: rgba(242,238,227,0.04);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.15rem;
+    }
+    .stat-card strong {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1;
+      margin-bottom: .35rem;
+      letter-spacing: -.05em;
+    }
+    .stat-card span {
+      display: block;
+      color: var(--text-muted);
+      font-size: var(--body-sm);
+    }
+
+    .quote-block {
+      border-left: 2px solid var(--lime);
+      padding-left: 1rem;
+      margin-top: 1rem;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: var(--body-xl);
+      color: var(--text-strong);
+      max-width: 36rem;
+    }
+    .quote-source {
+      display: block;
+      font-family: var(--sans);
+      font-style: normal;
+      font-size: var(--body-sm);
+      color: var(--text-dim);
+      margin-top: .6rem;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+    .bullet-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .bullet-card {
+      background: linear-gradient(180deg, rgba(242,238,227,0.05), rgba(242,238,227,0.03));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.15rem;
+    }
+    .bullet-card h4 {
+      margin: 0 0 .65rem;
+      font-size: var(--body);
+      font-weight: 700;
+      color: var(--text);
+    }
+    .bullet-card p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: var(--body-sm);
+      line-height: 1.55;
+    }
+    .lesson {
+      margin-top: 1.6rem;
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
+      line-height: 1.08;
+      font-family: var(--serif);
+      color: var(--text-strong);
+      max-width: 28rem;
+    }
+    .lesson .lime { font-family: var(--display); font-weight: 800; }
+
+    .work-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+      margin-top: 2rem;
+    }
+    .work-item {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 1.25rem;
+      padding: 1.2rem;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(242,238,227,0.05), rgba(242,238,227,0.03));
+      box-shadow: var(--shadow);
+    }
+    .work-item img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+    }
+    .work-item-copy {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+    .work-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1;
+      margin: 0;
+      font-weight: 400;
+    }
+    .work-title .small {
+      display: block;
+      font-family: var(--display);
+      font-weight: 800;
+      color: var(--lime);
+      font-size: .48em;
+      letter-spacing: .02em;
+      margin-bottom: .45rem;
+      text-transform: uppercase;
+    }
+    .work-item-copy p { margin: 0; color: var(--text-secondary); font-size: var(--body); max-width: 45rem; }
+    .work-line {
+      padding-top: .65rem;
+      border-top: 1px solid var(--line);
+      color: var(--text-muted);
+      font-size: var(--body-sm);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: clamp(2rem, 4vw, 4.5rem);
+      align-items: start;
+    }
     .trust-band {
       background: var(--lime);
       color: var(--ink);
     }
-    .trust-band .section-title.display,
-    .trust-band .section-title,
-    .trust-band .section-intro,
+    .trust-band .section-title {
+      font-family: var(--display);
+      font-weight: 800;
+      color: var(--ink);
+      max-width: 10ch;
+    }
     .trust-band .eyebrow,
-    .trust-band .card.light .card-tag,
-    .trust-band .card.light p,
-    .trust-band .card.light h3 { color: var(--ink); }
-    .trust-band .eyebrow { color: rgba(17,16,12,0.55); }
-    .trust-band .eyebrow::before { background: currentColor; }
-    .trust-band .card.light {
-      background: rgba(17,16,12,0.08);
-      border-color: rgba(17,16,12,0.07);
+    .trust-band .section-intro { color: var(--ink-soft); }
+    .trust-cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
-    .trust-band .card.light p { color: rgba(17,16,12,0.82); }
-    .trust-band .card.light .card-tag { color: rgba(17,16,12,0.62); }
+    .trust-card {
+      background: rgba(17,16,12,0.06);
+      border: 1px solid rgba(17,16,12,0.08);
+      border-radius: 22px;
+      padding: 1.2rem;
+    }
+    .trust-card h3 {
+      margin: 0 0 .55rem;
+      font-size: var(--body);
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .trust-card p {
+      margin: 0;
+      color: rgba(17,16,12,0.72);
+      font-size: var(--body-sm);
+      line-height: 1.55;
+    }
 
-    .cta-panel {
-      padding: clamp(3rem, 6vw, 4rem) var(--pad-x);
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.75rem;
+    }
+    .timeline-entry {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 1.2rem;
+      padding: 1.05rem 0;
       border-top: 1px solid var(--line);
-      text-align: center;
     }
-    .cta-panel .section-title.display {
-      max-width: 11ch;
-      margin: 0 auto 0.8rem;
+    .timeline-entry:last-child { border-bottom: 1px solid var(--line); }
+    .timeline-date {
+      color: var(--text-dim);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: .82rem;
+      padding-top: .25rem;
     }
-    .cta-panel .section-intro {
-      margin: 0 auto 1.2rem;
-      max-width: 40rem;
+    .timeline-copy h3 {
+      margin: 0 0 .4rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .timeline-copy p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: var(--body);
+      max-width: 48rem;
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      grid-template-columns: 1.1fr .9fr;
       gap: clamp(2rem, 4vw, 4rem);
       align-items: start;
     }
-    .contact-copy h1 {
-      font-family: var(--serif);
-      font-size: clamp(2.8rem, 5vw, 4.4rem);
-      line-height: 0.98;
-      letter-spacing: -0.03em;
-      font-weight: 400;
-      margin: 0 0 1rem;
-      max-width: 8ch;
-    }
-    .contact-copy p {
-      font-size: var(--body-xl);
-      color: var(--text-secondary);
-      max-width: 34rem;
-      margin: 0;
-    }
     .contact-card {
+      background: linear-gradient(180deg, rgba(242,238,227,0.05), rgba(242,238,227,0.03));
       border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      padding: 1.4rem;
-      background: linear-gradient(180deg, rgba(242,238,227,0.04), rgba(242,238,227,0.02));
+      border-radius: 24px;
+      padding: 1.3rem;
       box-shadow: var(--shadow);
     }
     .contact-row {
       display: grid;
-      grid-template-columns: 86px 1fr;
+      grid-template-columns: 90px 1fr;
       gap: 1rem;
-      padding: 0.95rem 0;
+      padding: .85rem 0;
       border-top: 1px solid var(--line);
     }
-    .contact-row:first-of-type { border-top: none; padding-top: 0; }
-    .contact-row:last-of-type { padding-bottom: 0; }
-    .contact-label {
+    .contact-row:first-child { border-top: none; padding-top: 0; }
+    .contact-row strong {
+      color: var(--text-dim);
       font-size: var(--label);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-dim);
-      font-weight: 600;
+      letter-spacing: .12em;
     }
-    .contact-value {
-      font-size: var(--body-xl);
+    .contact-row span, .contact-row a {
       color: var(--text);
+      font-size: var(--body);
       word-break: break-word;
     }
-    .contact-note {
-      margin-top: 1.3rem;
+
+    .footer-note {
+      color: var(--text-dim);
       font-family: var(--serif);
       font-style: italic;
-      color: var(--text-muted);
-      font-size: var(--body);
+      font-size: var(--body-xl);
+      margin-top: 1.3rem;
     }
 
-    .footer {
-      padding: 1.3rem var(--pad-x) 1.8rem;
-      border-top: 1px solid var(--line);
-    }
-    .footer-inner {
-      width: min(calc(100% - 2 * var(--pad-x)), var(--container));
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      color: var(--text-dim);
-      font-size: var(--body-sm);
-    }
-
-    @media (max-width: 1100px) {
+    @media (max-width: 1024px) {
       .hero-grid,
-      .split-feature,
+      .intro-block,
+      .product-grid,
       .contact-grid,
-      .work-row {
+      .work-item,
+      .project-layout {
         grid-template-columns: 1fr;
       }
-      .hero-side { max-width: 38rem; }
-      .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .story-grid { grid-template-columns: 150px 1fr; }
-    }
-
-    @media (max-width: 760px) {
-      :root {
-        --section-y: 3.6rem;
-        --body-xl: 1.08rem;
-        --body: 1.02rem;
-        --body-sm: 0.96rem;
-        --label: 0.78rem;
+      .project-side { padding-top: 0; }
+      .project-preview-grid,
+      .stats-grid,
+      .bullet-grid,
+      .trust-cards,
+      .artifact-grid {
+        grid-template-columns: 1fr 1fr;
       }
-      .desktop-nav,
-      .nav-cta.desktop-only { display: none; }
-      .menu-btn { display: inline-flex; }
-      .site-nav-inner { height: 64px; }
-      .hero,
-      .product-hero,
-      .story-hero { padding-top: 4.5rem; }
-      .hero-grid,
-      .grid-3,
-      .grid-2,
-      .contact-grid { grid-template-columns: 1fr; }
-      .btn-row,
-      .trust-chips,
-      .chips { align-items: stretch; }
-      .btn-row .btn,
-      .mobile-cta,
-      .chips .chip { width: auto; }
-      .hero::after,
-      .product-hero::after,
-      .story-hero::after { opacity: 0.18; right: -12%; }
-      .ticker { gap: 0.65rem 1rem; }
-      .story-grid,
-      .timeline-item,
-      .contact-row,
-      .work-row,
-      .use-case { grid-template-columns: 1fr; }
-      .story-label,
-      .timeline-date,
-      .contact-label,
-      .use-n { padding-top: 0; }
-      .use-n { margin-bottom: -0.6rem; }
-      .contact-copy h1 { max-width: 10ch; }
-      .card,
-      .hero-side,
-      .contact-card { padding: 1.15rem; }
+      .why-list {
+        grid-template-columns: 1fr;
+        gap: .75rem;
+      }
+      .why-copy { padding-bottom: 1.6rem; }
     }
 
-    @media (max-width: 560px) {
-      .btn-row { flex-direction: column; align-items: stretch; }
-      .btn-row .btn { width: 100%; }
-      .hero-title,
-      .product-title,
-      .section-title.display { max-width: none; }
-      .hero::after,
-      .product-hero::after,
-      .story-hero::after { display: none; }
-      .product-strip { display: none; }
-      .site-nav-inner { gap: 0.75rem; }
-      .brand { font-size: 1.55rem; }
+    @media (max-width: 768px) {
+      :root {
+        --display-xl: clamp(2.6rem, 11vw, 4.4rem);
+        --display-lg: clamp(2.2rem, 9vw, 3.8rem);
+        --display-md: clamp(1.75rem, 7vw, 2.8rem);
+        --body-xl: 1.02rem;
+        --body: 1rem;
+        --body-sm: 0.95rem;
+        --label: 0.75rem;
+        --section-y: clamp(3rem, 10vw, 4rem);
+      }
+      .nav-center { display: none; }
+      .menu-btn { display: inline-flex; }
+      .nav-actions .btn-primary { display: none; }
+      .hero {
+        min-height: auto;
+        padding-top: 4.8rem;
+      }
+      .project-hero-inner { min-height: 0; }
+      .project-preview-grid,
+      .stats-grid,
+      .bullet-grid,
+      .trust-cards,
+      .artifact-grid {
+        grid-template-columns: 1fr;
+      }
+      .artifact.wide { grid-column: auto; }
+      .work-item img { aspect-ratio: 16 / 10; }
+      .timeline-entry,
+      .contact-row {
+        grid-template-columns: 1fr;
+        gap: .35rem;
+      }
     }
+
+
+    .section-jump { scroll-margin-top: 84px; }
+    .site-footer { padding: 1.5rem var(--pad-x) 2.2rem; border-top: 1px solid var(--line); }
+    .site-footer .wrap { display:flex; justify-content:space-between; gap:1rem; align-items:center; flex-wrap:wrap; }
+    .footer-links { display:flex; gap:1rem; flex-wrap:wrap; color: var(--text-dim); font-size: var(--body-sm); }
+    .nav-link.product.active { color: var(--lime); }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-      }
+      * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
     }
+  
   </style>
 </head>
 <body>
-  <nav class="site-nav" aria-label="Primary">
-    <div class="site-nav-inner wrap">
-      <button class="brand" data-page="home" aria-label="Go to home">pikl</button>
-      <div class="desktop-nav" role="tablist" aria-label="Site pages">
-        <button class="nav-link active" data-page="home">Start Here</button>
-        <button class="nav-link" data-page="why">Why I Build</button>
-        <button class="nav-link" data-page="work">Work</button>
-        <button class="nav-link" data-page="log">Build Log</button>
-        <button class="nav-link" data-page="contact">Contact</button>
-        <button class="nav-link product" data-page="pikl">Pikl →</button>
+<nav class="site-nav">
+    <div class="site-nav-inner">
+      <a class="brand" href="#start">pikl</a>
+      <div class="nav-center">
+        <a class="nav-link" href="#start" data-section="start">Start Here</a>
+        <a class="nav-link" href="#why-build" data-section="why-build">Why I Build</a>
+        <a class="nav-link" href="#selected-work" data-section="selected-work">Work</a>
+        <a class="nav-link" href="#build-log" data-section="build-log">Build Log</a>
+        <a class="nav-link" href="#contact" data-section="contact">Contact</a>
+        <a class="nav-link product" href="#pikl" data-section="pikl">Pikl →</a>
       </div>
       <div class="nav-actions">
-        <button class="nav-cta desktop-only" data-page="pikl">early access</button>
+        <a class="btn btn-primary" href="#pikl">early access</a>
         <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">☰</button>
       </div>
     </div>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <div class="mobile-panel">
-      <div class="mobile-panel-top">
-        <div class="brand">pikl</div>
-        <button class="mobile-close" id="menuClose" aria-label="Close menu">✕</button>
+    <div class="mobile-menu-inner">
+      <div class="mobile-top">
+        <a class="brand" href="#start">pikl</a>
+        <button class="btn btn-ghost" id="menuClose">Close</button>
       </div>
-      <button class="mobile-nav-link active" data-page="home">Start Here</button>
-      <button class="mobile-nav-link" data-page="why">Why I Build</button>
-      <button class="mobile-nav-link" data-page="work">Work</button>
-      <button class="mobile-nav-link" data-page="log">Build Log</button>
-      <button class="mobile-nav-link" data-page="contact">Contact</button>
-      <button class="mobile-nav-link" data-page="pikl">Pikl</button>
-      <button class="btn btn-primary mobile-cta" data-page="pikl">get early access →</button>
+      <a class="mobile-nav-link active" href="#start" data-section="start">Start Here</a>
+      <a class="mobile-nav-link" href="#why-build" data-section="why-build">Why I Build</a>
+      <a class="mobile-nav-link" href="#selected-work" data-section="selected-work">Work</a>
+      <a class="mobile-nav-link" href="#build-log" data-section="build-log">Build Log</a>
+      <a class="mobile-nav-link" href="#contact" data-section="contact">Contact</a>
+      <a class="mobile-nav-link" href="#pikl" data-section="pikl">Pikl</a>
     </div>
   </div>
-
-  <main>
-    <section class="page active" id="page-home">
-      <div class="hero">
+<main>
+  <section class="page section-jump" id="start">
+<section class="hero">
         <div class="hero-grid">
-          <div>
-            <span class="pill lime">founder-led · student-first</span>
-            <h1 class="hero-title"><span class="soft">A private layer for the</span> <span class="accent">high-stakes decisions</span> <span class="soft">international students make alone.</span></h1>
-            <p class="hero-copy">Pikl starts in the moment before someone accepts the wrong job, misses an OPT deadline, or emails their DSO without understanding what is actually at stake.</p>
+          <div class="hero-copy">
+            <div class="eyebrow">Founder-led · product strategy · systems with consequences</div>
+            <h1 class="hero-title">
+              <span class="soft">I build for the moment</span>
+              before the wrong decision.
+            </h1>
+            <p>Pikl is a private decision layer for international students in the U.S. The current wedge is narrow on purpose: job and internship vetting, OPT timing, and DSO escalation prep before something small becomes irreversible.</p>
             <div class="btn-row">
-              <button class="btn btn-primary" data-page="pikl">See Pikl →</button>
-              <button class="btn btn-secondary" data-page="why">Why I’m building this</button>
+              <a class="btn btn-primary" href="#pikl">See Pikl</a>
+              <a class="btn btn-secondary" href="#selected-work">See the projects behind it</a>
             </div>
-            <p class="hero-subnote">Built by someone who lived the problem and has spent six years designing products for people navigating complex systems under pressure.</p>
           </div>
-          <aside class="hero-side" aria-label="What Pikl helps with">
-            <h3>The current wedge is intentionally narrow.</h3>
-            <p>Not a generic immigration assistant. Not a broad legal-tech tool. A product for the exact moments that cause the most avoidable mistakes.</p>
-            <div class="hero-list">
-              <div class="hero-list-item"><strong>Job and internship vetting.</strong> Can I take this role? What’s missing? What needs approval?</div>
-              <div class="hero-list-item"><strong>OPT timing.</strong> What matters next? What window am I in? What can I not afford to miss?</div>
-              <div class="hero-list-item"><strong>DSO prep.</strong> Do I need to escalate? What should I ask? How do I show up prepared?</div>
+          <aside class="hero-panel">
+            <h3>What this site is really showing</h3>
+            <p>The product is Pikl. The rest of the site is the proof that I have been circling this same design problem for years: users navigating fragmented, high-stakes systems without a private place to think clearly before they act.</p>
+            <div class="chip-row">
+              <span class="chip">international students</span>
+              <span class="chip">regulatory systems</span>
+              <span class="chip">worker safety</span>
+              <span class="chip">systems thinking</span>
             </div>
           </aside>
         </div>
-      </div>
+      </section>
 
-      <div class="product-strip">
-        <div class="ticker">
-          <span>job / internship vetting</span>
-          <span>OPT deadlines</span>
-          <span>DSO escalation prep</span>
-          <span>student-owned privacy</span>
-          <span>founder-led</span>
-          <span>decision clarity</span>
-          <span>not generic AI SaaS</span>
-        </div>
-      </div>
-
-      <section class="section">
+      <section class="section divider">
         <div class="wrap">
-          <div class="section-head">
-            <div>
-              <div class="eyebrow">Why this should feel immediately useful</div>
-              <h2 class="section-title display">Three moments where Pikl earns the right to exist.</h2>
-            </div>
-          </div>
-          <div class="stack">
-            <div class="use-case">
-              <div class="use-n">01</div>
-              <div>
-                <h3>Before a student accepts a role they do not fully understand.</h3>
-                <p>Pikl helps them pressure-test the job or internship against their actual status, identify what is missing, and walk into the next conversation with grounded questions instead of panic.</p>
+          <div class="eyebrow">Selected work that points here</div>
+          <h2 class="section-title" style="max-width:12ch;">Three projects. <span class="accent">One thesis tightening.</span></h2>
+          <p class="section-intro">These projects do not have much in common on the surface. A medical device company, an oil and gas safety firm, and field research on international student housing. But each one exposed the same pattern: the user at the center of the system was navigating real stakes without the infrastructure to get the next decision right.</p>
+
+          <div class="project-preview-grid">
+            <a class="project-preview" href="#project-student">
+              <img src="pikl-assets/student-p8.jpg" alt="Student housing concept showing integrated housing and roommate search" />
+              <div class="project-preview-body">
+                <div class="project-kicker">International student experience</div>
+                <h3>The time paradox</h3>
+                <p>How a housing search turned into a deeper insight about what happens when people have information, but no trusted place to apply it in time.</p>
+                <div class="preview-footer">
+                  <span>Field research · service design · systems mapping</span>
+                  <span>Read →</span>
+                </div>
               </div>
-            </div>
-            <div class="use-case">
-              <div class="use-n">02</div>
-              <div>
-                <h3>Before an OPT deadline quietly becomes irreversible.</h3>
-                <p>Instead of a scattered checklist and vague portal guidance, Pikl turns their stage, timing, and context into a clearer next-step view they can act on now.</p>
+            </a>
+
+            <a class="project-preview" href="#project-philips">
+              <img src="pikl-assets/philips-p9.jpg" alt="Philips systems diagram showing cross-functional dependencies" />
+              <div class="project-preview-body">
+                <div class="project-kicker">Philips Respironics</div>
+                <h3>The $664K paper trail</h3>
+                <p>How a broad generative AI brief became a much sharper diagnosis: one role carrying the hidden cost of multiple broken handoffs.</p>
+                <div class="preview-footer">
+                  <span>AI strategy · process redesign · quantified impact</span>
+                  <span>Read →</span>
+                </div>
               </div>
-            </div>
-            <div class="use-case">
-              <div class="use-n">03</div>
-              <div>
-                <h3>Before a DSO conversation gets framed badly.</h3>
-                <p>Pikl is not there to replace the school. It is there to make sure the student is not the least-prepared person in the room.</p>
+            </a>
+
+            <a class="project-preview" href="#project-msa">
+              <img src="pikl-assets/msa-p7.jpg" alt="Oil and gas workers and a safety manager in the field" />
+              <div class="project-preview-body">
+                <div class="project-kicker">MSA Safety</div>
+                <h3>Beyond compliance</h3>
+                <p>What fieldwork in oil and gas revealed about training, trust, worker behavior, and why measuring safety on paper misses what matters on site.</p>
+                <div class="preview-footer">
+                  <span>Field research · behavioral product thinking</span>
+                  <span>Read →</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
 
       <section class="section divider">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <div class="eyebrow">Execution, not theory</div>
-              <h2 class="section-title">I keep building for users who cannot afford confusion.</h2>
-            </div>
-            <button class="btn btn-secondary" data-page="work">See selected work</button>
-          </div>
-          <div class="grid-3">
-            <article class="card accent-coral">
-              <div class="card-tag">AI analytics · 3,000+ users</div>
-              <div class="metric">35%</div>
-              <div class="metric-sub">task completion improvement</div>
-              <h3>Making insight usable under pressure.</h3>
-              <p>Built for users who needed the answer faster, but more importantly, needed to trust the next action.</p>
-              <div class="card-quote">“The failure isn’t the model. It’s the moment between insight and action.”</div>
-            </article>
-            <article class="card accent-purple">
-              <div class="card-tag">EdTech · K-12 learning</div>
-              <div class="metric">+14%</div>
-              <div class="metric-sub">premium conversion</div>
-              <h3>Designing for students who do not finish.</h3>
-              <p>Improved early-session retention by reducing confusion in the exact moments where students usually dropped off.</p>
-              <div class="card-quote">“First sessions are irreversible. That lesson is in Pikl’s DNA.”</div>
-            </article>
-            <article class="card accent-sky">
-              <div class="card-tag">Compliance & safety</div>
-              <div class="metric">67%</div>
-              <div class="metric-sub">faster filing timelines</div>
-              <h3>Reducing the cost of getting it wrong.</h3>
-              <p>In safety and compliance workflows, clarity is not polish. It is the difference between reliable action and preventable error.</p>
-              <div class="card-quote">“In high-stakes systems, removing friction is a safety decision.”</div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section divider">
-        <div class="wrap split-feature">
+        <div class="wrap intro-block">
           <div>
-            <div class="eyebrow">Why I’m building this</div>
-            <h2 class="section-title">This is founder-market fit in the most literal sense.</h2>
+            <div class="eyebrow">Why these projects belong together</div>
+            <p>Philips shows how I think in systems — finding the structural failure that hides inside what first looks like a process problem.</p>
+            <p>MSA shows how I research in the field — sitting with users whose outcomes depend on whether information reaches them in a form they can act on.</p>
+            <p>International student housing shows where it became personal — where I stopped designing for someone else's problem and recognized myself in the pattern.</p>
           </div>
-          <div class="feature-copy">
-            <p>I lived the exact pattern Pikl is built against: high-stakes decisions, scattered information, institutional opacity, and too much consequence tied to one misunderstood step.</p>
-            <p>Pikl is not built from abstract empathy. It is built from lived urgency and years of shipping products for people inside systems that were never really designed around their reality.</p>
-            <div class="btn-row">
-              <button class="btn btn-secondary" data-page="why">Read the full story</button>
-              <button class="btn btn-primary" data-page="pikl">Explore the product</button>
-            </div>
+          <div class="small-note">
+            <strong style="display:block;color:var(--text);margin-bottom:.45rem;">Why the project titles are unconventional</strong>
+            The titles name the insight, not the engagement. “The time paradox.” “The $664K paper trail.” “Beyond compliance.” That is intentional. The point is not to present polished case studies first. It is to make the pattern legible.
           </div>
         </div>
       </section>
 
       <section class="section divider">
         <div class="wrap">
-          <div class="section-head">
-            <div>
-              <div class="eyebrow">Building in public</div>
-              <h2 class="section-title">Pikl is not a thought I’m sitting on.</h2>
-            </div>
-            <button class="btn btn-secondary" data-page="log">Open build log</button>
+          <div class="eyebrow">Transition into Pikl</div>
+          <div class="note">By the time I finished the housing research, I had documented the same failure in three industries across three years. The question stopped being academic. If I could see the pattern this clearly, and the tool still did not exist, what exactly was I waiting for?</div>
+        </div>
+      </section>
+  </section>
+
+  <section class="page section-jump" id="why-build">
+<section class="section">
+        <div class="wrap">
+          <div class="eyebrow">Why I build</div>
+          <h1 class="section-title" style="max-width:11ch;">I am drawn to products that sit inside <span class="accent">messy, high-stakes systems.</span></h1>
+          <p class="section-intro">Not because the domains are dramatic. Because the design problem keeps repeating. People have information, fragments of policy, half-helpful guidance, and real consequences. What they usually do not have is a private, trustworthy layer that helps them reason through their exact situation before they act.</p>
+        </div>
+      </section>
+
+      <section class="section divider" style="padding-top:2rem;">
+        <div class="wrap why-list">
+          <div class="why-label">The instinct</div>
+          <div class="why-copy">
+            <h3>I keep choosing problems where clarity changes outcomes.</h3>
+            <p>That has shown up in healthcare, worker safety, and international student experience. Different users. Different domains. Same structural failure: the system makes sense to itself, but not to the person trying to move through it.</p>
           </div>
-          <div class="timeline">
-            <article class="timeline-item">
-              <div class="timeline-date">Apr 2026</div>
-              <div>
-                <h3>Why I stopped calling it a platform</h3>
-                <p>A platform implies infrastructure. What I’m building is a decision layer — the moment before someone makes a call they cannot easily take back.</p>
-              </div>
-            </article>
-            <article class="timeline-item">
-              <div class="timeline-date">Mar 2026</div>
-              <div>
-                <h3>Locking the three core flows</h3>
-                <p>Job offer review. OPT timeline. DSO prep. Everything else comes later. The MVP is the narrow wedge done well.</p>
-              </div>
-            </article>
+
+          <div class="why-label">The pattern</div>
+          <div class="why-copy">
+            <h3>Information existing is not the same thing as guidance landing.</h3>
+            <p>I care less about content abundance than about decision quality. When the right next step is hard to see, people guess, wait too long, or escalate too late. The cost is never just confusion. It is what confusion turns into.</p>
+          </div>
+
+          <div class="why-label">Why Pikl</div>
+          <div class="why-copy">
+            <h3>This is the most personal version of the problem I have built around.</h3>
+            <p>I lived the version of it that mattered most to me. That is why Pikl is narrow, student-first, and deliberately private. It is not trying to replace institutions. It is trying to make sure the student arrives ready.</p>
+          </div>
+        </div>
+      </section>
+  </section>
+
+  <section class="page section-jump" id="selected-work">
+<section class="section">
+        <div class="wrap intro-block">
+          <div>
+            <div class="eyebrow">Selected work</div>
+            <h1 class="section-title" style="max-width:12ch;">Built across hard domains. <span class="accent">Same instinct every time.</span></h1>
+            <p>These three projects do not have a lot in common on the surface — a medical device company, an oil and gas safety firm, and field research on student housing. But they share a pattern I could not stop finding.</p>
+            <p>In each one, the user at the center of the system was navigating something high-stakes without the infrastructure to get it right. The information existed. The stakes were real. But nothing translated complexity into action at the moment it mattered.</p>
+            <p>I kept designing around that gap. Eventually I started building into it.</p>
+          </div>
+          <div class="small-note">
+            <strong style="display:block;color:var(--text);margin-bottom:.45rem;">What these pages are optimized for</strong>
+            They are written to be read, not skimmed. The artefacts are there to prove the insight, not just decorate the page. The “what changed” sections are framed around reframes and decisions, not deliverables.
           </div>
         </div>
       </section>
 
-      <div class="footer">
-        <div class="footer-inner">
-          <span>pikl</span>
-          <span>Private decision layer for international students</span>
-          <span>Founder-led · building now</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="page" id="page-why">
-      <div class="story-hero">
-        <div class="wrap">
-          <div class="eyebrow">Why I Build</div>
-          <h1 class="section-title" style="font-size:clamp(2.7rem,6vw,5.5rem);max-width:12ch;">I’m drawn to products that sit where confusion and consequence meet.</h1>
-          <p class="section-intro">Not as an intellectual exercise. As a pattern I understand from the inside and keep returning to in the products I choose to build.</p>
-        </div>
-      </div>
-
-      <section class="section" style="padding-top:2rem;">
-        <div class="wrap">
-          <div class="story-grid">
-            <div class="story-label">Founder origin</div>
-            <div class="story-body">
-              <h2>I didn’t choose this problem space. It chose me.</h2>
-              <p>I moved to the U.S. after an arranged marriage, rebuilt my life through graduate school at Carnegie Mellon, and then watched my future collapse around an immigration-related situation that should have been understood, navigated, and prevented earlier.</p>
-              <p>The information existed. The support system existed. What did not exist was a trusted place to apply the information to my actual situation before it became irreversible.</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            <div class="story-label">What that taught me</div>
-            <div class="story-body">
-              <h2>The problem is not always lack of information.</h2>
-              <p>In high-stakes systems, people often have too much information and too little orientation. They ask the wrong person, move too late, move too fast, or frame the situation badly because nobody helped them think clearly when it mattered.</p>
-              <div class="pull">“People in high-stakes systems don’t need more content. They need help applying information to a real situation before they act on it.”</div>
-            </div>
-          </div>
-          <div class="story-grid">
-            <div class="story-label">Why Pikl exists</div>
-            <div class="story-body">
-              <h2>Pikl is where my life and product work arrive at the same place.</h2>
-              <p>Across analytics, education, compliance, and safety, I kept working on the same design problem: users inside systems that worked in theory, but failed them in practice when the next step was unclear.</p>
-              <p>Pikl is the most direct version of that problem I have ever built for — and the most personal.</p>
+      <section class="section divider" style="padding-top:2rem;">
+        <div class="wrap work-list">
+          <article class="work-item">
+            <img src="pikl-assets/student-map-p2.jpg" alt="Current-state journey map for international student housing search" />
+            <div class="work-item-copy">
+              <h2 class="work-title"><span class="small">International student experience</span>The time paradox</h2>
+              <p>A field research project on international student housing that surfaced a deeper systems problem: students were doing the more emotionally urgent search first, and the more time-sensitive search second.</p>
+              <div class="work-line">What changed: reframed the problem from “finding housing” to “sequencing under uncertainty.”</div>
               <div class="btn-row">
-                <button class="btn btn-primary" data-page="pikl">See the product →</button>
-                <button class="btn btn-secondary" data-page="contact">Get in touch</button>
+                <a class="btn btn-primary" href="#project-student">Open project</a>
               </div>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <img src="pikl-assets/philips-p18.jpg" alt="Philips slide showing a 664 thousand dollar annual cost" />
+            <div class="work-item-copy">
+              <h2 class="work-title"><span class="small">Philips Respironics</span>The $664K paper trail</h2>
+              <p>A generative AI strategy project that started broad and became specific: a regulatory engineering bottleneck sitting at the intersection of development, V&V, design quality, and FDA submission work.</p>
+              <div class="work-line">What changed: narrowed from “AI for software process improvement” to one load-bearing role, one costly workflow, and one actionable architecture.</div>
+              <div class="btn-row">
+                <a class="btn btn-primary" href="#project-philips">Open project</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <img src="pikl-assets/msa-p7.jpg" alt="Ground worker and safety manager photos from MSA project" />
+            <div class="work-item-copy">
+              <h2 class="work-title"><span class="small">MSA Safety</span>Beyond compliance</h2>
+              <p>A field research and product opportunity project in oil and gas safety that uncovered the real gap between training on paper and safety on site.</p>
+              <div class="work-line">What changed: moved the problem from “more training” to motivation, trust, behavior, and measurable feedback loops.</div>
+              <div class="btn-row">
+                <a class="btn btn-primary" href="#project-msa">Open project</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section divider">
+        <div class="wrap">
+          <div class="eyebrow">The explicit through-line</div>
+          <div class="note">By the time I finished the housing research, I had documented the same failure in three industries across three years. The question stopped being academic. If I could see this clearly, and the tool did not exist yet — what was I waiting for?</div>
+          <div class="btn-row" style="margin-top:1.2rem;">
+            <a class="btn btn-secondary" href="#pikl">See how it turns into Pikl</a>
+          </div>
+        </div>
+      </section>
+  </section>
+
+  <section class="page section-jump" id="project-student">
+<section class="project-hero has-image" style="--hero-image:url('pikl-assets/student-p8.jpg');">
+        <div class="project-hero-inner">
+          <div class="project-hero-copy">
+            <div class="eyebrow">International student experience · field research · service design</div>
+            <h1 class="project-title">The time paradox</h1>
+            <p class="project-subtitle">This project started as student housing research. It ended as a much sharper systems insight: the issue was not just access to housing. It was the absence of a trusted way to apply fragmented information in the right order, under time pressure.</p>
+            <div class="meta-row">
+              <span class="meta-pill">4–6 weeks on roommate search</span>
+              <span class="meta-pill">8–10 weeks total search</span>
+              <span class="meta-pill">35% ideal combinations</span>
+              <span class="meta-pill">8.5/10 stress</span>
             </div>
           </div>
         </div>
       </section>
-    </section>
 
-    <section class="page" id="page-work">
-      <section class="section">
-        <div class="wrap">
-          <div class="eyebrow">Selected work</div>
-          <h1 class="section-title" style="font-size:clamp(2.8rem,6vw,5.2rem);max-width:12ch;">Built across hard domains. Same instinct every time.</h1>
-          <p class="section-intro">The domain changed. The design problem stayed familiar: users navigating complexity with real consequences if they got the next step wrong.</p>
+      <section class="section divider">
+        <div class="wrap project-layout">
+          <div class="project-side">Why it matters</div>
+          <div class="project-main">
+            <h2>Not a housing problem. A sequencing problem.</h2>
+            <p>What looked like a housing search was actually two intertwined searches: one for a compatible roommate and one for actual accommodation. Most students were prioritizing the first, even though the second was more time-sensitive. That misalignment produced avoidable compromises, rushed decisions, and a level of stress that was far higher than the system acknowledged.</p>
+            <div class="quote-block">
+              “I spent so much time finding the perfect roommate match, only to realize we had just two weeks to find a place to live.”
+              <span class="quote-source">Sarah, graduate student from Australia</span>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="section divider" style="padding-top:2rem;">
         <div class="wrap">
-          <article class="work-row">
-            <div class="work-meta">
-              <div class="work-label">AI analytics · 3,000+ users</div>
-              <div class="metric">35%</div>
-              <h3>Making AI analytics actually usable</h3>
-            </div>
-            <div class="work-copy">
-              <p>An AI-powered analytics platform with real capability and too much friction between insight and action. Led strategy and releases to help users get to a reliable next step faster.</p>
-              <div class="work-learned">“The most common AI product failure is not the model. It is the moment where insight should become action and doesn’t.”</div>
-            </div>
-          </article>
-          <article class="work-row">
-            <div class="work-meta">
-              <div class="work-label">EdTech · Indian K-12</div>
-              <div class="metric">+14%</div>
-              <h3>Designing for students who don’t finish</h3>
-            </div>
-            <div class="work-copy">
-              <p>An ESL product with a conversion and retention problem hidden inside the first-use experience. Owned experimentation and onboarding changes that made value legible earlier.</p>
-              <div class="work-learned">“If the first session does not orient the student properly, recovery is rare.”</div>
-            </div>
-          </article>
-          <article class="work-row">
-            <div class="work-meta">
-              <div class="work-label">Compliance & safety</div>
-              <div class="metric">67%</div>
-              <h3>Reducing the cost of getting compliance wrong</h3>
-            </div>
-            <div class="work-copy">
-              <p>Worked on products where error was not just inefficient but costly and trust-eroding. Designed around users who needed the system to feel dependable before they would rely on it.</p>
-              <div class="work-learned">“In high-stakes domains, usability is not surface polish. It is operational trust.”</div>
-            </div>
-          </article>
+          <div class="artifact-grid">
+            <figure class="artifact wide">
+              <img src="pikl-assets/student-map-p2.jpg" alt="Current-state journey map for international graduate students from admission to leasing a home" />
+              <figcaption>Current-state map. The search is fragmented across channels, people, and stages. The red dashed zone marks the intervention area where the user is simultaneously evaluating roommates and homes while managing time pressure and uncertainty.</figcaption>
+            </figure>
+            <figure class="artifact">
+              <img src="pikl-assets/student-p5.jpg" alt="Segmentation of community seekers and home prioritizers in the international student housing search" />
+              <figcaption>The key segmentation: Community Seekers and Home Prioritizers. Most students prioritized finding the right person before securing the right place.</figcaption>
+            </figure>
+            <figure class="artifact">
+              <img src="pikl-assets/student-p8.jpg" alt="Integrated product concept showing apartments and potential roommates together" />
+              <figcaption>The intervention concept: bring housing and roommate search into one decision layer instead of treating them as two separate problems.</figcaption>
+            </figure>
+            <figure class="artifact wide">
+              <img src="pikl-assets/student-map-p4.jpg" alt="Future-state journey map showing an integrated housing search platform" />
+              <figcaption>Future-state map. The core move was concurrency: evaluate housing and compatible roommates together, earlier, with verified information and shared context.</figcaption>
+            </figure>
+          </div>
         </div>
       </section>
-    </section>
 
-    <section class="page" id="page-pikl">
-      <div class="product-hero">
-        <div class="product-hero-inner">
-          <span class="pill sky">building now · early access open</span>
-          <h1 class="product-title"><span class="line">Your OPT.</span><span class="line">Your offer.</span><span class="line lime">Figured out.</span></h1>
-          <p class="product-copy">Pikl is a private decision layer for international students in the U.S. It helps them think clearly before they accept a role, miss a deadline, or email their DSO blind.</p>
-          <div class="trust-chips">
-            <div class="trust-chip">your data stays yours</div>
-            <div class="trust-chip">invisible to your school</div>
-            <div class="trust-chip">not legal advice — more useful</div>
-          </div>
-          <div class="btn-row">
-            <button class="btn btn-primary" data-page="contact">get early access →</button>
-            <button class="btn btn-secondary" data-page="why">why this exists</button>
+      <section class="section divider">
+        <div class="wrap project-layout">
+          <div class="project-side">What changed</div>
+          <div class="project-main">
+            <h2>The insight was not “students need more information.”</h2>
+            <p>The deeper pattern was that information already existed — through university boards, Facebook groups, WhatsApp threads, listings, and peer advice — but it did not assemble into a decision. That was the through-line that later became much more important to me.</p>
+
+            <div class="bullet-grid">
+              <div class="bullet-card">
+                <h4>Reframed the problem</h4>
+                <p>Moved it from “housing search is hard” to “students are forced to make high-stakes decisions across fragmented channels, in the wrong order.”</p>
+              </div>
+              <div class="bullet-card">
+                <h4>Changed the unit of design</h4>
+                <p>Designed around the moment of decision, not just the marketplace. The important question became: what should a student know, compare, and resolve before acting?</p>
+              </div>
+              <div class="bullet-card">
+                <h4>Made the later leap possible</h4>
+                <p>This was the clearest early evidence that the missing product layer was private, contextual guidance before escalation — not just more content.</p>
+              </div>
+            </div>
+
+            <div class="lesson"><span class="lime">Lesson:</span> people do not just need information. They need somewhere to think clearly with it before the stakes arrive.</div>
+
+            <div class="btn-row" style="margin-top:1.3rem;">
+              <a class="btn btn-secondary" href="#pikl">See how this leads to Pikl</a>
+              <a class="btn btn-ghost" href="#selected-work">Back to work</a>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+  </section>
 
-      <section class="section light-band">
-        <div class="wrap">
-          <div class="eyebrow" style="color:rgba(17,16,12,0.56);">The real situation</div>
-          <h2 class="section-title display" style="color:var(--ink);max-width:10.5ch;">You’re making life-altering decisions with zero reliable info.</h2>
-          <div class="grid-2" style="margin-top:2rem;">
-            <article class="card light display-title accent-coral">
-              <h3>Reddit is fast and often wrong</h3>
-              <p>One bad answer in a high-stakes moment is worse than no answer at all.</p>
-            </article>
-            <article class="card light display-title accent-sky">
-              <h3>DSO office hours are slow</h3>
-              <p>You need clarity now. Waiting two weeks for an appointment does not work when the decision is live.</p>
-            </article>
-            <article class="card light display-title accent-purple">
-              <h3>School portals are built for schools</h3>
-              <p>They are rarely built for your actual offer, your actual timing, and your actual uncertainty.</p>
-            </article>
-            <article class="card light display-title accent-lime">
-              <h3>Your situation is not a textbook case</h3>
-              <p>Generic guidance may be technically right and still useless in practice.</p>
-            </article>
-          </div>
-          <div class="split-feature" style="margin-top:2rem;align-items:end;">
-            <div>
-              <div class="metric" style="color:var(--ink);font-size:clamp(4.2rem,11vw,7.5rem);">1.1M</div>
-            </div>
-            <div class="feature-copy">
-              <p style="color:rgba(17,16,12,0.8);margin:0;">international students in the U.S. are navigating this system right now. Most of them are piecing together the next step with too much consequence and too little reliable support.</p>
+  <section class="page section-jump" id="project-philips">
+<section class="project-hero">
+        <div class="project-hero-inner">
+          <div class="project-hero-copy">
+            <div class="eyebrow">Philips Respironics · AI strategy · regulatory engineering</div>
+            <h1 class="project-title">The $664K paper trail</h1>
+            <p class="project-subtitle">This project began with a broad prompt about generative AI and software process improvement. The real opportunity only appeared once the system was narrowed to one user living at the center of multiple handoffs: the regulatory engineer.</p>
+            <div class="meta-row">
+              <span class="meta-pill">20+ interviews</span>
+              <span class="meta-pill">16 opportunities identified</span>
+              <span class="meta-pill">5 teams</span>
+              <span class="meta-pill">$664K annual cost</span>
             </div>
           </div>
         </div>
       </section>
 
       <section class="section divider">
+        <div class="wrap project-layout">
+          <div class="project-side">Why it matters</div>
+          <div class="project-main">
+            <h2>The structural failure was hiding inside documentation work.</h2>
+            <p>The original brief was wide. Interviews across software development, V&V, design quality, and regulatory work revealed a much more focused opportunity: documentation creation for FDA submissions and design history files was pulling time, coordination, and cognitive load from multiple teams — but the burden became concentrated most visibly in regulatory engineering.</p>
+            <div class="quote-block">
+              “Every submission is like telling a story to the regulators.”
+              <span class="quote-source">Regulatory engineer interview summary</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section divider" style="padding-top:2rem;">
         <div class="wrap">
-          <div class="eyebrow">Current MVP</div>
-          <h2 class="section-title display">Three questions every F-1 student dreads. <span class="lime">Answered.</span></h2>
-          <div class="stack" style="margin-top:1.2rem;">
-            <div class="use-case">
-              <div class="use-n">01</div>
-              <div>
-                <h3>“Can I take this job or internship?”</h3>
-                <p>Pikl helps a student understand whether the role is safe to move on, what needs approval, what is missing, and how to enter the next conversation prepared.</p>
+          <div class="artifact-grid">
+            <figure class="artifact">
+              <img src="pikl-assets/philips-p9.jpg" alt="Philips systems diagram showing interdependencies across product, V and V, software development, design quality, regulatory, and FDA" />
+              <figcaption>The system map. The hidden problem was not one bad tool. It was a dense set of cross-functional dependencies converging in regulatory work.</figcaption>
+            </figure>
+            <figure class="artifact">
+              <img src="pikl-assets/philips-p13.jpg" alt="Philips persona slide for a regulatory engineer named Stacy Alberto" />
+              <figcaption>The load-bearing user. Once the work was anchored around the regulatory engineer, the workflow became much easier to reason about and quantify.</figcaption>
+            </figure>
+            <figure class="artifact">
+              <img src="pikl-assets/philips-p18.jpg" alt="Philips slide showing a total annual cost of 664 thousand dollars" />
+              <figcaption>The quantified cost. Pre-submission and submission effort together added up to an estimated $664K annually in the modeled workflow.</figcaption>
+            </figure>
+            <figure class="artifact">
+              <img src="pikl-assets/philips-p24.jpg" alt="Philips slide showing a projected 50 percent reduction in cost" />
+              <figcaption>Projected impact. The proposed intervention modeled a 50% reduction in the annual process cost.</figcaption>
+            </figure>
+            <figure class="artifact">
+              <img src="pikl-assets/philips-p21.jpg" alt="Philips slide showing the MAP architecture for document parsing, extracting information, and document generation" />
+              <figcaption>The MAP concept. Document parsing, extracting information, and document generation were positioned directly in the regulatory engineer’s workflow instead of as a detached AI experiment.</figcaption>
+            </figure>
+            <figure class="artifact">
+              <img src="pikl-assets/philips-p22.jpg" alt="Prototype demo of a custom document extractor in Google Document AI" />
+              <figcaption>Prototype direction. The solution was grounded in a concrete extraction workflow, not just strategic recommendation language.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section divider">
+        <div class="wrap project-layout">
+          <div class="project-side">What changed</div>
+          <div class="project-main">
+            <h2>From AI enthusiasm to one sharply framed bottleneck.</h2>
+            <p>The strongest move in this project was not the final concept. It was the narrowing. Instead of treating “software process improvement” as the opportunity, the work converged on one role, one kind of work, and one measurable cost center.</p>
+
+            <div class="bullet-grid">
+              <div class="bullet-card">
+                <h4>Reframed the opportunity</h4>
+                <p>Shifted from a broad AI exploration to a targeted question: how might generative AI optimize documentation creation for regulatory engineers in software development?</p>
+              </div>
+              <div class="bullet-card">
+                <h4>Made the cost legible</h4>
+                <p>Quantified the process burden and turned a vague internal pain point into something the organization could reason about economically.</p>
+              </div>
+              <div class="bullet-card">
+                <h4>Designed for the handoff layer</h4>
+                <p>The solution lived where teams, documents, and compliance logic met — not inside a generic AI layer floating above the work.</p>
               </div>
             </div>
-            <div class="use-case">
-              <div class="use-n">02</div>
-              <div>
-                <h3>“What do I need to do about OPT — and when?”</h3>
-                <p>Pikl turns timing, graduation stage, and offer context into a clearer window of action so deadlines stop feeling like silent traps.</p>
+
+            <div class="lesson"><span class="lime">Lesson:</span> when a system feels too broad to fix, find the person carrying the handoffs. That is usually where the product really begins.</div>
+
+            <div class="btn-row" style="margin-top:1.3rem;">
+              <a class="btn btn-ghost" href="#selected-work">Back to work</a>
+            </div>
+          </div>
+        </div>
+      </section>
+  </section>
+
+  <section class="page section-jump" id="project-msa">
+<section class="project-hero has-image" style="--hero-image:url('pikl-assets/msa-p1.jpg');">
+        <div class="project-hero-inner">
+          <div class="project-hero-copy">
+            <div class="eyebrow">MSA Safety · oil and gas field research · product opportunity</div>
+            <h1 class="project-title">Beyond compliance</h1>
+            <p class="project-subtitle">This project started with a brief about improving safety training efficiency and efficacy. Fieldwork pushed it somewhere more interesting: the real product problem sat in motivation, trust, behavior, and the poor way training efficacy was being measured on site.</p>
+            <div class="meta-row">
+              <span class="meta-pill">Fatality rate 7x other industries</span>
+              <span class="meta-pill">Ground worker + safety manager</span>
+              <span class="meta-pill">Incidents, quizzes, informal evals</span>
+              <span class="meta-pill">Existing device data available</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section divider">
+        <div class="wrap project-layout">
+          <div class="project-side">Why it matters</div>
+          <div class="project-main">
+            <h2>Training was easy on paper. The reality was different.</h2>
+            <p>Across the research, the product challenge moved away from content delivery and toward lived site conditions: hazardous environments, worker turnover, conflicting priorities, repetitive internal training, confidence-driven shortcuts, and measurement systems that only caught failures after they happened.</p>
+            <p>The strongest framing shift in this project was simple: training efficacy was being assessed through incidents, near misses, quizzes, and informal observation — yet those methods were manual, incomplete, and often too late to change behavior upstream.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section divider" style="padding-top:2rem;">
+        <div class="wrap">
+          <div class="artifact-grid">
+            <figure class="artifact">
+              <img src="pikl-assets/msa-p7.jpg" alt="Ground worker and safety manager images from MSA project" />
+              <figcaption>The two key user positions: the ground worker and the safety manager. The product opportunity lives in the relationship between them, not in training content alone.</figcaption>
+            </figure>
+            <figure class="artifact">
+              <img src="pikl-assets/msa-p9.jpg" alt="Training spectrum from high engagement to low engagement methods" />
+              <figcaption>Current training landscape. The closer the training is to the actual work, the higher the engagement — but much of the system still relies on lower-engagement formats.</figcaption>
+            </figure>
+            <figure class="artifact">
+              <img src="pikl-assets/msa-p10.jpg" alt="Slide describing why training is easy on paper but reality is different" />
+              <figcaption>The real constraints: remote temporary sites, profits over safety, worker turnover, overlapping trainings, and constant transition between harsh environments and home.</figcaption>
+            </figure>
+            <figure class="artifact">
+              <img src="pikl-assets/msa-p11.jpg" alt="Slide showing why workers resist training" />
+              <figcaption>Behavioral barriers. Confidence, prior experience, and perceived repetitiveness all reduced training uptake and seriousness.</figcaption>
+            </figure>
+            <figure class="artifact">
+              <img src="pikl-assets/msa-p13.jpg" alt="Slide explaining how training efficacy is measured through incidents, evaluations, and informal observation" />
+              <figcaption>How efficacy was currently measured: incidents and near misses, theoretical evaluations, and informal evaluations.</figcaption>
+            </figure>
+            <figure class="artifact">
+              <img src="pikl-assets/msa-p19.jpg" alt="Stakeholder map focused on safety training domain" />
+              <figcaption>Stakeholder map. The problem was not just between worker and company; it spanned managers, consultants, trainers, unions, and external partners.</figcaption>
+            </figure>
+            <figure class="artifact wide">
+              <img src="pikl-assets/msa-p20.jpg" alt="MSA has a wealth of data including worker and equipment reports" />
+              <figcaption>The opportunity signal. MSA already had device and equipment data that could help make training more continuous, customizable, and measurable.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section divider">
+        <div class="wrap project-layout">
+          <div class="project-side">What changed</div>
+          <div class="project-main">
+            <h2>The product moved from training delivery to behavior change.</h2>
+            <p>The client brief asked how to improve and monitor training efficiency and efficacy. The fieldwork made the better question visible: how might a continuous, measurable training experience address workers’ intrinsic motivations and behavioral deficiencies in the actual context of the work?</p>
+
+            <div class="bullet-grid">
+              <div class="bullet-card">
+                <h4>Shifted the core problem</h4>
+                <p>Moved from “how do we provide training?” to “how do we influence behavior, trust, and follow-through on site?”</p>
+              </div>
+              <div class="bullet-card">
+                <h4>Reframed measurement</h4>
+                <p>Identified that incidents, quizzes, and informal observation were insufficient proxies for whether training was actually landing before risk materialized.</p>
+              </div>
+              <div class="bullet-card">
+                <h4>Found a real product advantage</h4>
+                <p>MSA already had relevant worker and equipment data. The opportunity was to use that infrastructure to make training responsive to site reality instead of periodic and static.</p>
               </div>
             </div>
-            <div class="use-case">
-              <div class="use-n">03</div>
-              <div>
-                <h3>“Do I need to talk to my DSO — and how?”</h3>
-                <p>It helps a student frame the issue, gather what matters, and avoid escalating with the wrong level of certainty or the wrong kind of panic.</p>
+
+            <div class="lesson"><span class="lime">Lesson:</span> in high-risk environments, the product is not the training module. It is the loop between behavior, trust, context, and what gets noticed in time.</div>
+
+            <div class="btn-row" style="margin-top:1.3rem;">
+              <a class="btn btn-ghost" href="#selected-work">Back to work</a>
+            </div>
+          </div>
+        </div>
+      </section>
+  </section>
+
+  <section class="page section-jump" id="pikl">
+<section class="hero" style="min-height:clamp(560px,76vh,820px);">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Pikl · current MVP</span>
+            <h1 class="hero-title"><span class="soft">Your OPT.</span><span class="soft">Your offer.</span><span class="lime">Figured out.</span></h1>
+            <p>Pikl is a private decision layer for international students in the U.S. before they accept a job, miss a deadline, or email their DSO blind.</p>
+            <div class="chip-row">
+              <span class="chip">job / internship vetting</span>
+              <span class="chip">OPT timing + deadline guidance</span>
+              <span class="chip">DSO escalation prep</span>
+            </div>
+            <div class="btn-row" style="margin-top:1rem;">
+              <button class="btn btn-primary">get early access →</button>
+              <a class="btn btn-secondary" href="#contact">talk to me</a>
+            </div>
+          </div>
+          <aside class="hero-panel">
+            <h3>Why the product is narrow</h3>
+            <p>The point is not to become a giant platform too early. The point is to be genuinely useful in the moments before an international student makes a decision with immigration, timing, or institutional consequences attached.</p>
+            <div class="chip-row">
+              <span class="chip">private by design</span>
+              <span class="chip">student-first</span>
+              <span class="chip">founder-led</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section divider light-band">
+        <div class="wrap">
+          <div class="eyebrow">The real situation</div>
+          <h2 class="section-title" style="font-family:var(--display);font-weight:800;max-width:10ch;">You're making <span style="color:var(--coral);font-family:inherit;font-weight:inherit;">life-altering</span> decisions with zero reliable info.</h2>
+          <div class="bullet-grid">
+            <div class="bullet-card" style="background:var(--surface-light-card);border-color:rgba(17,16,12,0.08);">
+              <h4>Reddit is fast and often wrong</h4>
+              <p>One bad answer in a high-stakes moment is worse than no answer at all.</p>
+            </div>
+            <div class="bullet-card" style="background:var(--surface-light-card);border-color:rgba(17,16,12,0.08);">
+              <h4>School portals are built for schools</h4>
+              <p>Not for you, your situation, or your actual offer letter on the table.</p>
+            </div>
+            <div class="bullet-card" style="background:var(--surface-light-card);border-color:rgba(17,16,12,0.08);">
+              <h4>DSO office hours are slow</h4>
+              <p>You need clarity now. Waiting two weeks for an appointment does not work.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section divider">
+        <div class="wrap product-grid">
+          <div>
+            <div class="eyebrow">The first three flows</div>
+            <h2 class="section-title" style="font-family:var(--display);font-weight:800;max-width:12ch;">Three questions every F-1 student dreads. <span class="accent">Answered.</span></h2>
+          </div>
+          <div class="timeline" style="margin-top:0;">
+            <div class="timeline-entry">
+              <div class="timeline-date">01</div>
+              <div class="timeline-copy">
+                <h3>Can I take this job or internship?</h3>
+                <p>Pikl helps evaluate the role, flag what is missing, and prep the DSO conversation before the student says yes too quickly.</p>
+              </div>
+            </div>
+            <div class="timeline-entry">
+              <div class="timeline-date">02</div>
+              <div class="timeline-copy">
+                <h3>What do I need to do about OPT — and when?</h3>
+                <p>Pikl turns dates, status, and current stage into an actual decision timeline instead of scattered reminders and vague policy pages.</p>
+              </div>
+            </div>
+            <div class="timeline-entry">
+              <div class="timeline-date">03</div>
+              <div class="timeline-copy">
+                <h3>Do I need to talk to my DSO — and how?</h3>
+                <p>Pikl helps the student understand what is going on, what to bring, and how to frame the issue before escalating blindly.</p>
               </div>
             </div>
           </div>
@@ -1372,158 +1531,155 @@
 
       <section class="section trust-band">
         <div class="wrap">
-          <div class="eyebrow">Because you’ve been burned before</div>
-          <h2 class="section-title display" style="color:var(--ink);max-width:8ch;">Your situation. Your data. Your call.</h2>
-          <div class="grid-3" style="margin-top:2rem;">
-            <article class="card light display-title">
+          <div class="eyebrow">Because students have been burned before</div>
+          <h2 class="section-title" style="font-family:var(--display);font-weight:800;">Your situation. Your data. Your call.</h2>
+          <div class="trust-cards">
+            <div class="trust-card">
               <h3>Student-owned by design</h3>
-              <p>Everything you share with Pikl belongs to you. Not your school. Not your employer. Not anyone else.</p>
-            </article>
-            <article class="card light display-title">
-              <h3>Patterns, not people</h3>
-              <p>If a university ever partners with Pikl, they get anonymized trend data only. Never your case, never your private questions.</p>
-            </article>
-            <article class="card light display-title">
-              <h3>Not legal advice — more useful</h3>
-              <p>Pikl is there to help a student understand the situation and show up ready. It does not pretend to replace counsel or institutions.</p>
-            </article>
+              <p>Everything shared with Pikl belongs to the student. Not the school. Not the employer. Not the institution being escalated to.</p>
+            </div>
+            <div class="trust-card">
+              <h3>Private before institutional</h3>
+              <p>The product exists for the moment before someone emails the DSO or misses a deadline. That means privacy is part of the UX, not a legal footer.</p>
+            </div>
+            <div class="trust-card">
+              <h3>Narrow on purpose</h3>
+              <p>Pikl is not trying to replace lawyers or universities. It is trying to make sure the student arrives better prepared than they would have otherwise.</p>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="section divider">
-        <div class="wrap split-feature">
-          <div>
-            <div class="eyebrow">The goal</div>
-            <h2 class="section-title">The student is never the least-prepared person in the room.</h2>
-          </div>
-          <div class="feature-copy">
-            <p>Pikl starts with the decision moments that matter most. Over time, it becomes the student-side operating layer for navigating work, compliance, and status through the entire journey.</p>
-            <div class="pull">Not to replace the institution. To make sure the student arrives ready.</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="cta-panel">
         <div class="wrap">
-          <h2 class="section-title display">Stop guessing. <span class="lime">Start knowing.</span></h2>
-          <p class="section-intro">Early access is open. Join the waitlist and help shape the first version of a product that should have existed years ago.</p>
-          <div class="btn-row" style="justify-content:center;">
-            <button class="btn btn-primary" data-page="contact">get early access →</button>
-            <button class="btn btn-secondary" data-page="log">follow the build</button>
-          </div>
+          <div class="eyebrow">Why this product exists</div>
+          <div class="note">Student housing showed the pattern. Philips proved I build around structural failures, not just user pain. MSA sharpened the behavioral layer. Pikl is where those threads stop feeling adjacent and start feeling inevitable.</div>
         </div>
       </section>
-    </section>
+  </section>
 
-    <section class="page" id="page-log">
-      <section class="section">
+  <section class="page section-jump" id="build-log">
+<section class="section">
         <div class="wrap">
           <div class="eyebrow">Build log</div>
-          <h1 class="section-title" style="font-size:clamp(2.8rem,6vw,5.1rem);max-width:9.5ch;">Building Pikl means thinking out loud.</h1>
-          <p class="section-intro">Not a blog. A working record of what got sharper, what got cut, and what is becoming clear as the product narrows.</p>
+          <h1 class="section-title" style="max-width:10ch;">Building Pikl means <span class="accent">thinking out loud.</span></h1>
+          <p class="section-intro">Not a blog. A working record of what is getting sharper, what changed, and what I am learning while the product becomes more exact.</p>
+          <div class="timeline">
+            <div class="timeline-entry">
+              <div class="timeline-date">Apr 2026</div>
+              <div class="timeline-copy">
+                <h3>Stopped calling it a platform</h3>
+                <p>A platform made the idea bigger and blurrier. What I am actually building is a decision layer: the moment before a student makes a call they cannot take back.</p>
+              </div>
+            </div>
+            <div class="timeline-entry">
+              <div class="timeline-date">Mar 2026</div>
+              <div class="timeline-copy">
+                <h3>Locked the first three flows</h3>
+                <p>Job offer review. OPT timeline. DSO escalation prep. Everything else can wait. The MVP is the first three high-stakes moments done well.</p>
+              </div>
+            </div>
+            <div class="timeline-entry">
+              <div class="timeline-date">Feb 2026</div>
+              <div class="timeline-copy">
+                <h3>Selected work became part of the thesis</h3>
+                <p>The portfolio stopped being decorative. It became evidence that I have been finding the same failure pattern in very different systems for years.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-      <section class="section divider" style="padding-top:2rem;">
-        <div class="wrap timeline">
-          <article class="timeline-item">
-            <div class="timeline-date">Apr 2026</div>
-            <div>
-              <h3>Why I stopped calling it a platform</h3>
-              <p>Every time I described Pikl as a platform, the idea got bigger and blurrier. Decision layer was the more honest frame.</p>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-date">Mar 2026</div>
-            <div>
-              <h3>Locking the three core flows</h3>
-              <p>Job offer review. OPT timeline. DSO conversation prep. Those are the three moments where students are most alone and most likely to get it wrong.</p>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-date">Feb 2026</div>
-            <div>
-              <h3>Sharpening the positioning</h3>
-              <p>The information exists somewhere. The gap is private, student-side decision support before action. That is the product.</p>
-            </div>
-          </article>
-        </div>
-      </section>
-    </section>
+  </section>
 
-    <section class="page" id="page-contact">
-      <section class="section">
+  <section class="page section-jump" id="contact">
+<section class="section">
         <div class="wrap contact-grid">
-          <div class="contact-copy">
+          <div>
             <div class="eyebrow">Contact</div>
-            <h1>Thanks for stopping here.</h1>
-            <p>If Pikl resonates — as a user, collaborator, advisor, investor, or simply as someone who has lived some version of this problem — I’d like to hear from you.</p>
+            <h1 class="section-title" style="max-width:10ch;">If this resonates, I would like to hear from you.</h1>
+            <p class="section-intro">Whether you are an international student, a potential collaborator, or just someone who sees the shape of what Pikl could become — reach out. I am especially interested in talking to students who have navigated these systems firsthand.</p>
+            <div class="footer-note">Currently building Pikl. Based in Bengaluru.</div>
           </div>
           <div class="contact-card">
             <div class="contact-row">
-              <div class="contact-label">Email</div>
-              <div class="contact-value">rbp1307@gmail.com</div>
+              <strong>Email</strong>
+              <span>rbp1307@gmail.com</span>
             </div>
             <div class="contact-row">
-              <div class="contact-label">LinkedIn</div>
-              <div class="contact-value">linkedin.com/in/rujutaparulekar</div>
+              <strong>LinkedIn</strong>
+              <a href="https://linkedin.com/in/rujutaparulekar" target="_blank" rel="noopener noreferrer">linkedin.com/in/rujutaparulekar</a>
             </div>
-            <div class="contact-note">Currently building Pikl. Founder-led. Student-first. Still getting sharper.</div>
+            <div class="contact-row">
+              <strong>About</strong>
+              <span>Founder-led, student-first, still sharpening.</span>
+            </div>
           </div>
         </div>
       </section>
-    </section>
-  </main>
+  </section>
 
-  <script>
-    const pages = ['home', 'why', 'work', 'pikl', 'log', 'contact'];
-    const desktopLinks = Array.from(document.querySelectorAll('.nav-link'));
-    const mobileLinks = Array.from(document.querySelectorAll('.mobile-nav-link'));
-    const routeButtons = Array.from(document.querySelectorAll('[data-page]'));
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuBtn = document.getElementById('menuBtn');
-    const menuClose = document.getElementById('menuClose');
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="brand">pikl</div>
+      <div class="footer-links">
+        <span>Founder-led · student-first</span>
+        <a href="#project-student">International student experience</a>
+        <a href="#project-philips">Philips</a>
+        <a href="#project-msa">MSA Safety</a>
+      </div>
+    </div>
+  </footer>
+</main>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const menuClose = document.getElementById('menuClose');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const navLinks = Array.from(document.querySelectorAll('.nav-link[data-section]'));
+  const mobileLinks = Array.from(document.querySelectorAll('.mobile-nav-link[data-section]'));
+  const sections = ['start','why-build','selected-work','project-student','project-philips','project-msa','pikl','build-log','contact']
+    .map(id => document.getElementById(id)).filter(Boolean);
 
-    function setActive(page) {
-      pages.forEach(name => {
-        const section = document.getElementById('page-' + name);
-        if (section) section.classList.toggle('active', name === page);
-      });
-      desktopLinks.forEach(link => link.classList.toggle('active', link.dataset.page === page));
-      mobileLinks.forEach(link => link.classList.toggle('active', link.dataset.page === page));
-      document.querySelectorAll('.brand[data-page]').forEach(link => link.classList.toggle('active', page === 'home'));
-      window.scrollTo({ top: 0, behavior: 'instant' });
-      closeMenu();
-    }
+  function navStateFor(id) {
+    if (['project-student','project-philips','project-msa'].includes(id)) return 'selected-work';
+    return id;
+  }
 
-    function openMenu() {
-      mobileMenu.classList.add('open');
-      mobileMenu.setAttribute('aria-hidden', 'false');
-      menuBtn.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
-    }
+  function setActive(id) {
+    const current = navStateFor(id);
+    navLinks.forEach(link => link.classList.toggle('active', link.dataset.section === current));
+    mobileLinks.forEach(link => link.classList.toggle('active', link.dataset.section === current));
+  }
 
-    function closeMenu() {
-      mobileMenu.classList.remove('open');
-      mobileMenu.setAttribute('aria-hidden', 'true');
-      menuBtn.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
 
-    routeButtons.forEach(button => {
-      button.addEventListener('click', () => setActive(button.dataset.page));
-    });
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
 
-    menuBtn.addEventListener('click', openMenu);
-    menuClose.addEventListener('click', closeMenu);
-    mobileMenu.addEventListener('click', (event) => {
-      if (event.target === mobileMenu) closeMenu();
-    });
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeMenu();
-    });
+  menuBtn?.addEventListener('click', () => mobileMenu.classList.contains('open') ? closeMenu() : openMenu());
+  menuClose?.addEventListener('click', closeMenu);
+  mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
 
-    setActive('home');
-  </script>
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries.filter(entry => entry.isIntersecting)
+      .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (visible) setActive(visible.target.id);
+  }, { rootMargin: '-20% 0px -55% 0px', threshold: [0.05,0.15,0.3,0.6] });
+
+  sections.forEach(section => observer.observe(section));
+  setActive('start');
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.style.scrollBehavior = 'auto';
+  }
+</script>
 </body>
 </html>
