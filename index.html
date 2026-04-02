@@ -6,7 +6,7 @@
   <title>Pikl — founder-led product portfolio</title>
   <meta name="description" content="Pikl is a private decision layer for international students in the U.S. This site also shows the three projects that sharpened its thesis." />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
 
     :root {
       --bg: #0d0c09;
@@ -14,8 +14,8 @@
       --surface-soft: rgba(242, 238, 227, 0.04);
       --surface-card: rgba(242, 238, 227, 0.05);
       --surface-card-strong: rgba(242, 238, 227, 0.07);
-      --surface-light: #ece7db;
-      --surface-light-card: #dfd8c8;
+      --surface-light: #f3efe7;
+      --surface-light-card: #fbf8f1;
       --text: #f2eee3;
       --text-strong: rgba(242, 238, 227, 0.96);
       --text-secondary: rgba(242, 238, 227, 0.82);
@@ -26,13 +26,13 @@
       --ink: #11100c;
       --ink-soft: rgba(17, 16, 12, 0.8);
       --ink-dim: rgba(17, 16, 12, 0.6);
-      --lime: #c8f135;
-      --coral: #ff5c3a;
+      --lime: #b6d92c;
+      --coral: #ff6748;
       --sky: #89cfff;
       --purple: #a87cff;
       --green: #1c5b39;
       --serif: 'Instrument Serif', Georgia, serif;
-      --display: 'Syne', system-ui, sans-serif;
+      --display: 'Manrope', system-ui, sans-serif;
       --sans: 'DM Sans', system-ui, sans-serif;
       --container: 1180px;
       --reading: 760px;
@@ -107,11 +107,11 @@
       opacity: .9;
     }
     .section-title {
-      font-family: var(--serif);
-      font-weight: 400;
+      font-family: var(--display);
+      font-weight: 800;
       font-size: var(--display-lg);
-      line-height: 1.02;
-      letter-spacing: -0.03em;
+      line-height: 0.98;
+      letter-spacing: -0.045em;
       margin: 0 0 1rem;
       max-width: 14ch;
     }
@@ -299,8 +299,8 @@
       font-size: var(--display-xl);
       font-family: var(--display);
       font-weight: 800;
-      line-height: .95;
-      letter-spacing: -0.05em;
+      line-height: 0.98;
+      letter-spacing: -0.045em;
       margin: 0 0 1.2rem;
       max-width: 12ch;
     }
@@ -395,10 +395,11 @@
     }
     .project-preview h3 {
       margin: 0;
-      font-family: var(--serif);
+      font-family: var(--display);
       font-size: var(--heading-lg);
-      font-weight: 400;
-      line-height: 1;
+      font-weight: 800;
+      line-height: 1.02;
+      letter-spacing: -0.03em;
     }
     .project-preview p {
       margin: 0;
@@ -456,10 +457,11 @@
     }
     .why-copy h3 {
       margin: 0 0 .75rem;
-      font-family: var(--serif);
+      font-family: var(--display);
       font-size: var(--heading-lg);
-      font-weight: 400;
-      line-height: 1.08;
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -0.03em;
       max-width: 18ch;
     }
     .why-copy p {
@@ -480,6 +482,14 @@
     .light-band .meta-label { color: var(--ink-dim); }
     .light-band p,
     .light-band li { color: var(--ink-soft); }
+    .light-band .bullet-card {
+      background: var(--surface-light-card);
+      border-color: rgba(17,16,12,0.12);
+      box-shadow: none;
+    }
+    .light-band .bullet-card h4 { color: var(--ink); }
+    .light-band .bullet-card p { color: rgba(17,16,12,0.72); }
+
 
     .artifact-grid {
       display: grid;
@@ -545,11 +555,11 @@
       padding: 3rem 0 1rem;
     }
     .project-title {
-      font-family: var(--serif);
-      font-size: clamp(3rem, 7vw, 5.8rem);
-      line-height: .96;
-      letter-spacing: -0.04em;
-      font-weight: 400;
+      font-family: var(--display);
+      font-size: clamp(3rem, 7vw, 5.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      font-weight: 800;
       margin: 0 0 1rem;
     }
     .project-title .accent {
@@ -724,11 +734,12 @@
       gap: .75rem;
     }
     .work-title {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 3vw, 3rem);
-      line-height: 1;
+      font-family: var(--display);
+      font-size: clamp(2rem, 3vw, 2.85rem);
+      line-height: 0.98;
       margin: 0;
-      font-weight: 400;
+      font-weight: 800;
+      letter-spacing: -0.04em;
     }
     .work-title .small {
       display: block;
@@ -755,17 +766,19 @@
       align-items: start;
     }
     .trust-band {
-      background: var(--lime);
-      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(182,217,44,0.12), transparent 28%),
+        linear-gradient(180deg, #16180f 0%, #11120c 100%);
+      color: var(--text);
     }
     .trust-band .section-title {
       font-family: var(--display);
       font-weight: 800;
-      color: var(--ink);
+      color: var(--text);
       max-width: 10ch;
     }
     .trust-band .eyebrow,
-    .trust-band .section-intro { color: var(--ink-soft); }
+    .trust-band .section-intro { color: var(--text-dim); }
     .trust-cards {
       display: grid;
       grid-template-columns: repeat(3, minmax(0,1fr));
@@ -773,8 +786,8 @@
       margin-top: 1.5rem;
     }
     .trust-card {
-      background: rgba(17,16,12,0.06);
-      border: 1px solid rgba(17,16,12,0.08);
+      background: linear-gradient(180deg, rgba(242,238,227,0.05), rgba(242,238,227,0.03));
+      border: 1px solid rgba(242,238,227,0.10);
       border-radius: 22px;
       padding: 1.2rem;
     }
@@ -782,13 +795,13 @@
       margin: 0 0 .55rem;
       font-size: var(--body);
       font-weight: 700;
-      color: var(--ink);
+      color: var(--text);
     }
     .trust-card p {
       margin: 0;
-      color: rgba(17,16,12,0.72);
+      color: var(--text-secondary);
       font-size: var(--body-sm);
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     .timeline {
@@ -1479,7 +1492,7 @@
       <section class="section divider light-band">
         <div class="wrap">
           <div class="eyebrow">The real situation</div>
-          <h2 class="section-title" style="font-family:var(--display);font-weight:800;max-width:10ch;">You're making <span style="color:var(--coral);font-family:inherit;font-weight:inherit;">life-altering</span> decisions with zero reliable info.</h2>
+          <h2 class="section-title" style="max-width:10ch;">You're making <span style="color:var(--coral);font-family:inherit;font-weight:inherit;">life-altering</span> decisions with zero reliable info.</h2>
           <div class="bullet-grid">
             <div class="bullet-card" style="background:var(--surface-light-card);border-color:rgba(17,16,12,0.08);">
               <h4>Reddit is fast and often wrong</h4>
@@ -1501,7 +1514,7 @@
         <div class="wrap product-grid">
           <div>
             <div class="eyebrow">The first three flows</div>
-            <h2 class="section-title" style="font-family:var(--display);font-weight:800;max-width:12ch;">Three questions every F-1 student dreads. <span class="accent">Answered.</span></h2>
+            <h2 class="section-title" style="max-width:12ch;">Three questions every F-1 student dreads. <span class="accent">Answered.</span></h2>
           </div>
           <div class="timeline" style="margin-top:0;">
             <div class="timeline-entry">
@@ -1532,7 +1545,7 @@
       <section class="section trust-band">
         <div class="wrap">
           <div class="eyebrow">Because students have been burned before</div>
-          <h2 class="section-title" style="font-family:var(--display);font-weight:800;">Your situation. Your data. Your call.</h2>
+          <h2 class="section-title" style="max-width:9ch;">Your situation. Your data. Your call.</h2>
           <div class="trust-cards">
             <div class="trust-card">
               <h3>Student-owned by design</h3>
